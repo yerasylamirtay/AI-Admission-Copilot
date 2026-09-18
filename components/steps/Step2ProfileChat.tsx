@@ -105,7 +105,13 @@ export default function Step2ProfileChat({
   };
 
   return (
-    <div className="max-w-3xl mx-auto py-8 px-4">
+    <div className="profile-workspace max-w-6xl mx-auto py-8 px-4 sm:px-6">
+      <div className="profile-hero-card">
+        <div className="profile-avatar">{profile.grade ? String(profile.grade) : 'AI'}</div>
+        <div className="profile-hero-copy"><span>PERSONAL PROFILE</span><h1>Соберём твой маршрут поступления</h1><p>Ответь на несколько коротких вопросов — AI превратит твои цели и баллы в понятный план.</p></div>
+        <div className="profile-completion"><strong>{parsedProfile ? '100%' : `${Math.min(90, userMessagesCount * 12)}%`}</strong><span>готово</span><div><i style={{ width: `${parsedProfile ? 100 : Math.min(90, userMessagesCount * 12)}%` }} /></div></div>
+      </div>
+      <div className="profile-facts"><div><span>Класс / возраст</span><strong>{profile.grade || 'Добавим в диалоге'}</strong></div><div><span>Интересы</span><strong>{profile.interests?.length ? profile.interests.slice(0, 2).join(' · ') : 'Пока не указаны'}</strong></div><div><span>Экзамены</span><strong>{profile.exams ? 'Данные сохранятся здесь' : 'SAT · IELTS · ЕНТ'}</strong></div></div>
       {/* Step header */}
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-surface-border">
         <div>

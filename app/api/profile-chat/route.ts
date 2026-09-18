@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { callClaudeMessages, ClaudeMessage } from '@/lib/claude';
 import { PROFILE_COLLECTOR_PROMPT } from '@/lib/prompts/profile-collector';
+import { ADMISSION_SCOPE_REFUSAL, isAdmissionQuestion } from '@/lib/admission-scope';
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,6 +9,13 @@ export async function POST(req: NextRequest) {
 
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json({ error: 'Messages array is required' }, { status: 400 });
+    }
+
+    // Keep the copilot focused even when a user bypasses the UI and calls the API directly.
+    const latestUserMessage = [...messages].reverse().find((m: any) => m?.role === 'user');
+    const question = String(latestUserMessage?.content || '');
+    if (question && !isAdmissionQuestion(question)) {
+      return NextResponse.json({ reply: ADMISSION_SCOPE_REFUSAL });
     }
 
     // Limit conversation history to prevent token explosion

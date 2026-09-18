@@ -55,7 +55,7 @@ export default function Step7Home({
   const progressPercent = items.length > 0 ? Math.round((completedCount / items.length) * 100) : 0;
 
   return (
-    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 space-y-8 animate-fade-in pb-20">
+    <div className="dashboard-shell max-w-6xl mx-auto py-8 px-4 sm:px-6 space-y-8 animate-fade-in pb-20">
       {/* Header welcome with streak */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-border pb-6">
         <div>

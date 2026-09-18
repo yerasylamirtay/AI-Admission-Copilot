@@ -22,11 +22,11 @@ export default function ProgressBar({ currentStep, totalSteps = 7, onStepClick }
   const percentage = Math.min(100, Math.round(((currentStep - 1) / (totalSteps - 1)) * 100));
 
   return (
-    <div className="w-full bg-white border-b border-surface-border sticky top-0 z-30 shadow-soft">
+    <div className="progress-shell sticky top-[65px] z-30 border-b border-surface-border shadow-soft">
       <div className="max-w-5xl mx-auto px-4 py-3">
         {/* Top bar with labels and progress */}
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-primary">
+            <span className="text-xs font-semibold uppercase tracking-wider text-primary">
             Шаг {currentStep} из {totalSteps}: <span className="text-ink font-bold">{STEP_LABELS[currentStep - 1] || ''}</span>
           </span>
           <span className="text-xs font-bold text-ink-muted">
@@ -35,9 +35,9 @@ export default function ProgressBar({ currentStep, totalSteps = 7, onStepClick }
         </div>
 
         {/* Linear progress bar */}
-        <div className="h-2 w-full bg-surface-muted rounded-full overflow-hidden mb-3">
+        <div className="h-2 w-full overflow-hidden rounded-full bg-surface-muted mb-3">
           <div
-            className="h-full bg-primary transition-all duration-300 ease-out rounded-full"
+            className="h-full rounded-full bg-primary transition-all duration-500 ease-out"
             style={{ width: `${percentage}%` }}
           />
         </div>

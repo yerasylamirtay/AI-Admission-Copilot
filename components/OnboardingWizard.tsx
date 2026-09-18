@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
 import { Profile, DiagnoseResult, RecommendResult, RoadmapResult, UserStreak } from '@/lib/types';
 import Header from '@/components/Header';
+import AuthModal from '@/components/AuthModal';
 import ProgressBar from '@/components/ProgressBar';
 
 import Step1Landing from '@/components/steps/Step1Landing';
@@ -20,6 +21,7 @@ export default function OnboardingWizard() {
   const [user, setUser] = useState<any>(null);
   const [loaded, setLoaded] = useState(false);
   const [isHomeView, setIsHomeView] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   // Application Data States
   const [profile, setProfile] = useState<Partial<Profile>>({});
@@ -54,13 +56,15 @@ export default function OnboardingWizard() {
             if (parsed.selectedForComparison) setSelectedForComparison(parsed.selectedForComparison);
             if (parsed.roadmap) setRoadmap(parsed.roadmap);
             if (parsed.roadmapProgress) setRoadmapProgress(parsed.roadmapProgress);
-            if (parsed.currentStep) setCurrentStep(parsed.currentStep);
-            if (parsed.isHomeView) setIsHomeView(parsed.isHomeView);
             if (parsed.streak) setStreak(parsed.streak);
           }
         } catch (e) {
           console.warn('Local storage error:', e);
         }
+        // Guests always start on the public welcome screen. Progress data may be
+        // cached, but it must not bypass the landing page or expose dashboard UI.
+        setCurrentStep(1);
+        setIsHomeView(false);
         setLoaded(true);
       }
     });
@@ -386,20 +390,32 @@ export default function OnboardingWizard() {
   return (
     <div className="min-h-screen bg-surface-secondary flex flex-col">
       {/* Header */}
-      <Header
-        currentStep={currentStep}
-        userEmail={user?.email}
-        onNavigate={(step) => {
+      {(currentStep > 1 || isHomeView) && <Header
+          currentStep={currentStep}
+          userEmail={user?.email}
+          onNavigate={(step) => {
+            setIsHomeView(false);
+            setCurrentStep(step);
+          }}
+          onLogout={handleLogout}
+          onGoHome={() => setIsHomeView(true)}
+          isHomeView={isHomeView}
+          onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        />}
+
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onSuccess={(loggedInUser) => {
+          setUser(loggedInUser);
+          setIsAuthModalOpen(false);
           setIsHomeView(false);
-          setCurrentStep(step);
+          setCurrentStep(2);
         }}
-        onLogout={handleLogout}
-        onGoHome={() => setIsHomeView(true)}
-        isHomeView={isHomeView}
       />
 
       {/* 7-Step Progress Bar (when in step-by-step flow) */}
-      {!isHomeView && (
+      {!isHomeView && currentStep > 1 && (
         <ProgressBar
           currentStep={currentStep}
           totalSteps={7}

@@ -25,7 +25,7 @@ export default function Header({
   onOpenAuthModal,
 }: HeaderProps) {
   return (
-    <header className="bg-white border-b border-surface-border sticky top-0 z-20">
+    <header className="app-header sticky top-0 z-40 border-b border-surface-border">
       <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
         {/* Brand */}
         <div className="flex items-center gap-6">
@@ -34,8 +34,8 @@ export default function Header({
             onClick={onGoHome}
             className="flex items-center gap-2 group text-left focus:outline-none"
           >
-            <span className="w-9 h-9 rounded-button bg-primary text-white font-extrabold flex items-center justify-center text-lg shadow-purple group-hover:bg-primary-hover transition-all">
-              A
+            <span className="brand-mark shadow-purple transition-transform group-hover:-rotate-6">
+              ↗
             </span>
             <div>
               <span className="text-xl font-bold text-ink tracking-tight block">
@@ -54,7 +54,7 @@ export default function Header({
                 isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              🏠 Дашборд
+              ◈ Дашборд
             </button>
             <button
               type="button"
@@ -119,10 +119,10 @@ export default function Header({
                 onClick={onLogout}
                 className="text-xs font-semibold px-3 py-1.5 rounded-button text-danger hover:bg-danger-muted border border-transparent hover:border-danger/20 transition-all"
               >
-                Выйти
+                Выйти ↗
               </button>
             </div>
-          ) : (
+          ) : onOpenAuthModal ? (
             <button
               type="button"
               onClick={onOpenAuthModal}
@@ -130,7 +130,7 @@ export default function Header({
             >
               Войти в аккаунт
             </button>
-          )}
+          ) : null}
         </div>
       </div>
     </header>
