@@ -13,7 +13,15 @@ import universitiesData from '../data/universities.json';
  * 5. Sort each tier, limit to 4 per tier
  */
 export function recommendUniversities(profile: Partial<Profile>, diagnosis: DiagnoseResult): RecommendResult {
-  const allUniversities = universitiesData as University[];
+  // The demo catalog may contain richer Kazakhstan-specific fields (directions, grants,
+  // housing). Normalize those fields to the UI model while keeping every catalog entry.
+  const allUniversities = (universitiesData as any[]).map((uni) => ({
+    ...uni,
+    scholarships: uni.scholarships ?? uni.grants ?? '',
+    programs: uni.programs ?? uni.directions ?? [],
+    description: uni.description ?? uni.dataNote ?? '',
+    tuition: Number(uni.tuition ?? 0),
+  })) as University[];
 
   // ── 1. Filter by region ──
   const preferredRegions = profile.regions ?? [];
