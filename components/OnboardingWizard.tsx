@@ -1,217 +1,29 @@
-"use client";
+'use client';
+import { useCallback, useEffect, useState } from 'react';
+import { Profile, OnboardingState, RoadmapResult } from '@/lib/types';
+import Header, { AppSection } from '@/components/Header';
+import Welcome from '@/components/onboarding/Welcome'; import ProfileSetup from '@/components/onboarding/ProfileSetup'; import AcademicsAndTests from '@/components/onboarding/AcademicsAndTests'; import Preferences from '@/components/onboarding/Preferences';
+import Step3Diagnose from '@/components/steps/Step3Diagnose'; import Step4Recommendations from '@/components/steps/Step4Recommendations'; import Step5Compare from '@/components/steps/Step5Compare'; import Step6Roadmap from '@/components/steps/Step6Roadmap';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { Profile, DiagnoseResult, RecommendResult, RoadmapResult, EssayAnswers, OnboardingState } from '@/lib/types';
-import { ProgressBar } from '@/components/ProgressBar';
-import Step1Landing from './steps/Step1Landing';
-import Step2Profile from './steps/Step2Profile';
-import Step3Diagnose from './steps/Step3Diagnose';
-import Step4Recommendations from './steps/Step4Recommendations';
-import Step5Compare from './steps/Step5Compare';
-import Step6Roadmap from './steps/Step6Roadmap';
-import Step7NextStep from './steps/Step7NextStep';
-
-const STEPS = [
-  { label: 'Старт' },
-  { label: 'Профиль' },
-  { label: 'Диагностика' },
-  { label: 'Рекомендации' },
-  { label: 'Сравнение' },
-  { label: 'Roadmap' },
-  { label: 'Финиш' },
-];
-
-const INITIAL_STATE: OnboardingState = {
-  currentStep: 0,
-  profile: {},
-  diagnoseResult: null,
-  recommendations: null,
-  selectedForComparison: [],
-  roadmap: null,
-  roadmapProgress: {},
-  essayAnswers: { hook: '', journey: '', whyUs: '', futureImpact: '' },
-};
+const INITIAL_STATE: OnboardingState = { currentStep: 0, profile: {}, diagnoseResult: null, recommendations: null, selectedForComparison: [], roadmap: null, roadmapProgress: {}, essayAnswers: {} };
 
 export default function OnboardingWizard() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [state, setState] = useState<OnboardingState>(INITIAL_STATE);
-  const [isLoadingDiagnose, setIsLoadingDiagnose] = useState(false);
-  const [isLoadingRecommend, setIsLoadingRecommend] = useState(false);
-
-  // ── Restore from localStorage on mount ──
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem('admitpath_state');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        setState(parsed);
-      }
-    } catch (e) {
-      console.error('Failed to restore state:', e);
-    }
-    setIsLoaded(true);
-  }, []);
-
-  // ── Persist to localStorage (debounced) ──
-  useEffect(() => {
-    if (!isLoaded) return;
-    const timeout = setTimeout(() => {
-      localStorage.setItem('admitpath_state', JSON.stringify(state));
-    }, 300);
-    return () => clearTimeout(timeout);
-  }, [state, isLoaded]);
-
-  // ── API: Diagnose ──
-  const runDiagnose = useCallback(async (profile: Partial<Profile>) => {
-    setIsLoadingDiagnose(true);
-    try {
-      const res = await fetch('/api/diagnose', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(profile),
-      });
-      if (!res.ok) throw new Error('Diagnose failed');
-      const data = await res.json();
-      return data.diagnosis ?? data;
-    } catch (err) {
-      console.error('Diagnose error:', err);
-      return null;
-    } finally {
-      setIsLoadingDiagnose(false);
-    }
-  }, []);
-
-  // ── API: Recommend ──
-  const runRecommend = useCallback(async (profile: Partial<Profile>, diagnosis: DiagnoseResult) => {
-    setIsLoadingRecommend(true);
-    try {
-      const res = await fetch('/api/recommend', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ profile, diagnosis }),
-      });
-      if (!res.ok) throw new Error('Recommend failed');
-      const data = await res.json();
-      return data.recommendations ?? data;
-    } catch (err) {
-      console.error('Recommend error:', err);
-      return null;
-    } finally {
-      setIsLoadingRecommend(false);
-    }
-  }, []);
-
-  // ── State updaters ──
-  const handleUpdateProfile = (updates: Partial<Profile>) => {
-    setState(prev => ({ ...prev, profile: { ...prev.profile, ...updates } }));
-  };
-
-  const handleNext = async () => {
-    const nextStep = Math.min(state.currentStep + 1, STEPS.length - 1);
-
-    // When leaving Step 2 (Profile) → run diagnose + recommend chain
-    if (state.currentStep === 1) {
-      const diagnosis = await runDiagnose(state.profile);
-      if (diagnosis) {
-        const recommendations = await runRecommend(state.profile, diagnosis);
-        setState(prev => ({
-          ...prev,
-          currentStep: nextStep,
-          diagnoseResult: diagnosis,
-          recommendations: recommendations ?? prev.recommendations,
-        }));
-        return;
-      }
-    }
-
-    setState(prev => ({ ...prev, currentStep: nextStep }));
-  };
-
-  const handleBack = () => {
-    setState(prev => ({ ...prev, currentStep: Math.max(prev.currentStep - 1, 0) }));
-  };
-
-  const handlePresetAndSkip = async (presetProfile: Profile) => {
-    setState(prev => ({ ...prev, profile: presetProfile, currentStep: 2 }));
-
-    // Auto-run diagnose + recommend for preset
-    const diagnosis = await runDiagnose(presetProfile);
-    if (diagnosis) {
-      const recommendations = await runRecommend(presetProfile, diagnosis);
-      setState(prev => ({
-        ...prev,
-        diagnoseResult: diagnosis,
-        recommendations: recommendations ?? prev.recommendations,
-      }));
-    }
-  };
-
-  const handleToggleComparison = (id: string) => {
-    setState(prev => {
-      const selected = prev.selectedForComparison.includes(id)
-        ? prev.selectedForComparison.filter(x => x !== id)
-        : prev.selectedForComparison.length < 4
-          ? [...prev.selectedForComparison, id]
-          : prev.selectedForComparison;
-      return { ...prev, selectedForComparison: selected };
-    });
-  };
-
-  const handleToggleRoadmapItem = (id: string) => {
-    setState(prev => ({
-      ...prev,
-      roadmapProgress: { ...prev.roadmapProgress, [id]: !prev.roadmapProgress[id] },
-    }));
-  };
-
-  const handleSetRoadmap = (roadmap: RoadmapResult) => {
-    setState(prev => ({ ...prev, roadmap }));
-  };
-
-  if (!isLoaded) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  const stepProps = {
-    profile: state.profile,
-    onUpdateProfile: handleUpdateProfile,
-    onNext: handleNext,
-    onBack: handleBack,
-    diagnoseResult: state.diagnoseResult,
-    recommendations: state.recommendations,
-    selectedForComparison: state.selectedForComparison,
-    onToggleComparison: handleToggleComparison,
-    roadmap: state.roadmap,
-    roadmapProgress: state.roadmapProgress,
-    onToggleRoadmapItem: handleToggleRoadmapItem,
-    isLoadingDiagnose,
-    isLoadingRecommend,
-  };
-
-  return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
-      <ProgressBar steps={STEPS} currentStep={state.currentStep} />
-      <div className="mt-8 animate-fade-in" key={state.currentStep}>
-        {state.currentStep === 0 && (
-          <Step1Landing
-            {...stepProps}
-            onNext={() => handleNext()}
-            onPresetSelect={handlePresetAndSkip}
-          />
-        )}
-        {state.currentStep === 1 && <Step2Profile {...stepProps} />}
-        {state.currentStep === 2 && <Step3Diagnose {...stepProps} />}
-        {state.currentStep === 3 && <Step4Recommendations {...stepProps} />}
-        {state.currentStep === 4 && <Step5Compare {...stepProps} />}
-        {state.currentStep === 5 && (
-          <Step6Roadmap {...stepProps} onSetRoadmap={handleSetRoadmap} />
-        )}
-        {state.currentStep === 6 && <Step7NextStep {...stepProps} />}
-      </div>
-    </div>
-  );
+  const [state, setState] = useState<OnboardingState>(INITIAL_STATE); const [loaded, setLoaded] = useState(false); const [onboarded, setOnboarded] = useState(false); const [section, setSection] = useState<AppSection>('profile'); const [uniTab, setUniTab] = useState<'recommendations'|'compare'>('recommendations'); const [loading, setLoading] = useState(false);
+  useEffect(() => { try { const saved = localStorage.getItem('admitpath_state'); if (saved) setState(JSON.parse(saved)); setOnboarded(Boolean(localStorage.getItem('activeUser') && saved)); } catch { /* use defaults */ } setLoaded(true); }, []);
+  useEffect(() => { if (loaded) localStorage.setItem('admitpath_state', JSON.stringify(state)); }, [state, loaded]);
+  const updateProfile = (updates: Partial<Profile>) => setState(prev => ({ ...prev, profile: { ...prev.profile, ...updates } }));
+  const runDiagnose = useCallback(async () => { setLoading(true); try { const res = await fetch('/api/diagnose', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state.profile) }); const data = await res.json(); if (data.diagnosis) { setState(prev => ({ ...prev, diagnoseResult: data.diagnosis })); return data.diagnosis; } } finally { setLoading(false); } }, [state.profile]);
+  const runRecommend = useCallback(async (diagnosis = state.diagnoseResult) => { if (!diagnosis) return; setLoading(true); try { const res = await fetch('/api/recommend', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ profile: state.profile, diagnosis }) }); const data = await res.json(); if (data.recommendations) setState(prev => ({ ...prev, recommendations: data.recommendations })); } finally { setLoading(false); } }, [state.profile, state.diagnoseResult]);
+  const navigate = async (next: AppSection) => { setSection(next); if (next === 'diagnose' && !state.diagnoseResult) await runDiagnose(); if (next === 'universities' && !state.recommendations) { const diagnosis = state.diagnoseResult ?? await runDiagnose(); await runRecommend(diagnosis); } };
+  const completeOnboarding = () => { setOnboarded(true); setSection('diagnose'); void runDiagnose(); };
+  const logout = () => { localStorage.removeItem('activeUser'); setOnboarded(false); setSection('profile'); };
+  if (!loaded) return <div className="min-h-screen flex items-center justify-center"><div className="w-10 h-10 border-4 border-accent border-t-transparent rounded-full animate-spin" /></div>;
+  if (!onboarded) return <Welcome hasProfile={Boolean(localStorage.getItem('admitpath_state'))} onContinue={() => setOnboarded(true)} onStart={(name) => { updateProfile({ name } as any); setOnboarded(true); setSection('profile'); }} />;
+  const common: any = { profile: state.profile, onUpdateProfile: updateProfile, diagnoseResult: state.diagnoseResult, recommendations: state.recommendations, selectedForComparison: state.selectedForComparison, onToggleComparison: (id: string) => setState(prev => ({ ...prev, selectedForComparison: prev.selectedForComparison.includes(id) ? prev.selectedForComparison.filter(x => x !== id) : prev.selectedForComparison.length < 4 ? [...prev.selectedForComparison, id] : prev.selectedForComparison })), roadmap: state.roadmap, roadmapProgress: state.roadmapProgress, onToggleRoadmapItem: (id: string) => setState(prev => ({ ...prev, roadmapProgress: { ...prev.roadmapProgress, [id]: !prev.roadmapProgress[id] } })), onSetRoadmap: (roadmap: RoadmapResult) => setState(prev => ({ ...prev, roadmap })) };
+  return <><Header section={section} onNavigate={navigate} onLogout={logout} /><main className="max-w-6xl mx-auto px-4 py-8">
+    {section === 'profile' && <div className="space-y-8"><ProfileSetup profile={state.profile as any} onUpdate={updateProfile} onNext={() => undefined} /><AcademicsAndTests profile={state.profile} onUpdate={updateProfile} onNext={() => undefined} /><Preferences profile={state.profile} onUpdate={updateProfile} onComplete={completeOnboarding} /></div>}
+    {section === 'diagnose' && <Step3Diagnose {...common} isLoadingDiagnose={loading} onNext={() => navigate('universities')} onBack={() => navigate('profile')} />}
+    {section === 'universities' && <div className="space-y-5"><div className="flex gap-2"><button className={`chip ${uniTab === 'recommendations' ? 'chip-active' : ''}`} onClick={() => setUniTab('recommendations')}>Рекомендации</button><button className={`chip ${uniTab === 'compare' ? 'chip-active' : ''}`} onClick={() => setUniTab('compare')}>Сравнение</button></div>{uniTab === 'recommendations' ? <Step4Recommendations {...common} onNext={() => setUniTab('compare')} onBack={() => navigate('diagnose')} isLoadingRecommend={loading} /> : <Step5Compare {...common} onNext={() => navigate('roadmap')} onBack={() => setUniTab('recommendations')} />}</div>}
+    {section === 'roadmap' && <Step6Roadmap {...common} onNext={() => undefined} onBack={() => navigate('universities')} />}
+  </main></>;
 }

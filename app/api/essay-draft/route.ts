@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { callClaude } from '@/lib/claude';
 import { Profile, University, EssayAnswers, EssayDraftResult } from '@/lib/types';
+import { checkAndIncrementBudget } from '@/lib/token-budget';
 
 export async function POST(request: Request) {
   try {
@@ -41,8 +42,11 @@ GPA: ${profile.gpa}, Специальности: ${(profile.specialties ?? []).j
 3. Почему этот вуз: ${answers.whyUs}
 4. Будущее влияние: ${answers.futureImpact}`;
 
+    if (!checkAndIncrementBudget().allowed) {
+      return NextResponse.json({ result: buildFallbackDraft(university, profile, answers), source: 'fallback' });
+    }
     try {
-      const draftText = await callClaude(systemPrompt, userMessage, 1500);
+      const draftText = await callClaude(systemPrompt, userMessage, 900);
       const wordCount = draftText.split(/\s+/).filter(Boolean).length;
       const result: EssayDraftResult = {
         draft: draftText,
@@ -88,4 +92,9 @@ ${answers.hook}
     console.error('Error in /api/essay-draft:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
+}
+
+function buildFallbackDraft(university: University, profile: Partial<Profile>, answers: EssayAnswers): EssayDraftResult {
+  const draft = `Уважаемая приёмная комиссия ${university.name}!\n\n${answers.hook}\n\nМой путь к выбору специальности начался с того, что ${answers.journey}\n\nЯ выбираю именно ${university.name}, потому что ${answers.whyUs}\n\nПосле окончания университета я планирую ${answers.futureImpact}\n\nС уважением,\nАбитуриент`;
+  return { draft, wordCount: draft.split(/\s+/).filter(Boolean).length, suggestions: ['ИИ-генерация временно недоступна — это шаблонный черновик', 'Добавьте конкретные детали', 'Попросите учителя помочь с редактурой'] };
 }

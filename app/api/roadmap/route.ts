@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { callClaude } from '@/lib/claude';
 import { Profile, University, RoadmapResult, RoadmapItem } from '@/lib/types';
+import { checkAndIncrementBudget } from '@/lib/token-budget';
 
 export async function POST(request: Request) {
   try {
@@ -39,8 +40,22 @@ Generate 8-12 tasks covering all three categories. Base deadlines on the univers
     const userMessage = `Student profile: GPA ${profile.gpa}, IELTS ${profile.ielts ?? 'not taken'}, SAT ${profile.sat ?? 'not taken'}, ENT ${profile.ent ?? 'not taken'}.
 Target universities: ${uniList}`;
 
+    const buildFallback = () => {
+      const earliestDeadline = universities.map(u => u.deadline).sort()[0] || '2027-03-01';
+      const deadlineDate = new Date(earliestDeadline);
+      const items: RoadmapItem[] = [
+        ['Сдать IELTS / TOEFL', 'Зарегистрироваться и сдать языковой экзамен.', 'exams', 90, 'high'],
+        ['Подготовить SAT / ЕНТ', 'Пройти пробные тесты и зарегистрироваться на экзамен.', 'exams', 75, 'high'],
+        ['Собрать транскрипт оценок', 'Запросить официальный транскрипт в школе.', 'documents', 60, 'medium'],
+        ['Написать мотивационное письмо', 'Составить черновик и получить обратную связь.', 'essays', 45, 'high'],
+        ['Запросить рекомендательные письма', 'Попросить учителей написать рекомендации.', 'documents', 45, 'high'],
+        ['Подать заявки', `Финальная подача заявок до ${earliestDeadline}.`, 'documents', 0, 'high'],
+      ].map(([title, description, category, days, priority], index) => ({ id: `task-${index + 1}`, title: title as string, description: description as string, category: category as RoadmapItem['category'], deadline: new Date(deadlineDate.getTime() - Number(days) * 86400000).toISOString().split('T')[0], completed: false, priority: priority as RoadmapItem['priority'] }));
+      return { items, weeklyPriority: { title: items[0].title, description: 'Это самый срочный пункт вашего плана. Начните с него сегодня.' } };
+    };
+    if (!checkAndIncrementBudget().allowed) return NextResponse.json({ roadmap: buildFallback(), source: 'fallback' });
     try {
-      const resultText = await callClaude(systemPrompt, userMessage, 2000);
+      const resultText = await callClaude(systemPrompt, userMessage, 1200);
       // Try to extract JSON from response (handle markdown code blocks)
       const jsonMatch = resultText.match(/\{[\s\S]*\}/);
       if (!jsonMatch) throw new Error('No JSON found in response');
@@ -50,9 +65,7 @@ Target universities: ${uniList}`;
       console.warn('Claude API failed in /api/roadmap, using fallback:', aiError);
 
       // Generate template roadmap from university deadlines
-      const earliestDeadline = universities
-        .map(u => u.deadline)
-        .sort()[0] || '2027-03-01';
+      const earliestDeadline = universities.map(u => u.deadline).sort()[0] || '2027-03-01';
 
       const deadlineDate = new Date(earliestDeadline);
       const items: RoadmapItem[] = [
