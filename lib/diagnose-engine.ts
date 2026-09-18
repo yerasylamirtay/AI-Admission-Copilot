@@ -37,7 +37,7 @@ export function diagnoseProfile(profile: Partial<Profile>): DiagnoseResult {
   // IELTS scoring: 8.0+ → 100, 7.0 → 80, 6.5 → 65, 6.0 → 50, null → 30
   let languagesScore = 30;
   let languagesDetail = 'IELTS не сдан — балл снижен. Рекомендуем подготовиться к экзамену.';
-  const ielts = profile.ielts;
+  const ielts = profile.exams?.ielts?.score ?? profile.ielts ?? null;
 
   if (ielts !== null && ielts !== undefined) {
     if (ielts >= 8.0)      { languagesScore = 100; languagesDetail = 'Превосходный уровень английского.'; }
@@ -45,6 +45,9 @@ export function diagnoseProfile(profile: Partial<Profile>): DiagnoseResult {
     else if (ielts >= 6.5) { languagesScore = 65;  languagesDetail = 'Хороший английский, достаточен для многих программ.'; }
     else if (ielts >= 6.0) { languagesScore = 50;  languagesDetail = 'Базовый уровень — некоторые конкурентные программы могут быть недоступны.'; }
     else                   { languagesScore = 30;  languagesDetail = 'Уровень ниже требуемого для большинства зарубежных вузов.'; }
+  } else if (profile.languages && profile.languages.some(l => l.toLowerCase().includes('англ') || l.toLowerCase().includes('eng'))) {
+    languagesScore = 50;
+    languagesDetail = 'Есть знание английского языка, но требуется подтверждение сертификатом.';
   }
 
   // ── 3. Exams (Weight: 0.25) ──
@@ -55,29 +58,31 @@ export function diagnoseProfile(profile: Partial<Profile>): DiagnoseResult {
   let examsDetail = 'Стандартные экзамены не сданы — рекомендуем запланировать SAT или ЕНТ.';
 
   let satScoreCalc = 0;
-  if (profile.sat !== null && profile.sat !== undefined) {
-    if (profile.sat >= 1500)      satScoreCalc = 100;
-    else if (profile.sat >= 1400) satScoreCalc = 85;
-    else if (profile.sat >= 1200) satScoreCalc = 65;
-    else if (profile.sat >= 1000) satScoreCalc = 45;
-    else                          satScoreCalc = 30;
+  const sat = profile.exams?.sat?.score ?? profile.sat ?? null;
+  if (sat !== null && sat !== undefined) {
+    if (sat >= 1500)      satScoreCalc = 100;
+    else if (sat >= 1400) satScoreCalc = 85;
+    else if (sat >= 1200) satScoreCalc = 65;
+    else if (sat >= 1000) satScoreCalc = 45;
+    else                  satScoreCalc = 30;
   }
 
   let entScoreCalc = 0;
-  if (profile.ent !== null && profile.ent !== undefined) {
-    if (profile.ent >= 135)      entScoreCalc = 100;
-    else if (profile.ent >= 120) entScoreCalc = 80;
-    else if (profile.ent >= 100) entScoreCalc = 60;
-    else                         entScoreCalc = 40;
+  const ent = profile.exams?.ent?.score ?? profile.ent ?? null;
+  if (ent !== null && ent !== undefined) {
+    if (ent >= 135)      entScoreCalc = 100;
+    else if (ent >= 120) entScoreCalc = 80;
+    else if (ent >= 100) entScoreCalc = 60;
+    else                 entScoreCalc = 40;
   }
 
   if (satScoreCalc > 0 || entScoreCalc > 0) {
     if (satScoreCalc >= entScoreCalc) {
       examsScore = satScoreCalc;
-      examsDetail = `SAT ${profile.sat} — ${satScoreCalc >= 85 ? 'отличный' : satScoreCalc >= 65 ? 'хороший' : 'средний'} результат.`;
+      examsDetail = `SAT ${sat} — ${satScoreCalc >= 85 ? 'отличный' : satScoreCalc >= 65 ? 'хороший' : 'средний'} результат.`;
     } else {
       examsScore = entScoreCalc;
-      examsDetail = `ЕНТ ${profile.ent} — ${entScoreCalc >= 80 ? 'сильный' : 'средний'} результат.`;
+      examsDetail = `ЕНТ ${ent} — ${entScoreCalc >= 80 ? 'сильный' : 'средний'} результат.`;
     }
   }
 

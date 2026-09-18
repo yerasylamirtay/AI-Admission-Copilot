@@ -1,20 +1,120 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React from 'react';
 
-export type AppSection = 'profile' | 'diagnose' | 'universities' | 'roadmap';
+export type AppSection = 'home' | 'profile' | 'diagnose' | 'universities' | 'compare' | 'roadmap' | 'next';
 
-export default function Header({ section, onNavigate, onLogout }: { section: AppSection; onNavigate: (section: AppSection) => void; onLogout: () => void }) {
-  const [remaining, setRemaining] = useState<number | null>(null);
-  useEffect(() => { fetch('/api/token-budget').then(r => r.json()).then(d => setRemaining(d.remaining)).catch(() => undefined); }, []);
-  return <header className="sticky top-0 z-20 border-b border-bg-border bg-bg/90 backdrop-blur-md">
-    <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
-      <button className="font-bold gradient-text text-xl mr-auto" onClick={() => onNavigate('profile')}>AdmitPath</button>
-      {(['profile', 'diagnose', 'universities', 'roadmap'] as AppSection[]).map((item) => <button key={item} onClick={() => onNavigate(item)} className={`text-caption md:text-body-sm px-2 py-1 rounded-button ${section === item ? 'text-accent bg-accent-muted' : 'text-text-secondary hover:text-text'}`}>
-        {item === 'profile' ? 'Профиль' : item === 'diagnose' ? 'Диагностика' : item === 'universities' ? 'Вузы' : 'План поступления'}
-      </button>)}
-      <span className="text-[11px] text-text-muted border border-bg-border rounded-full px-2 py-1">AI: осталось {remaining ?? '…'} из 60 запросов</span>
-      <button onClick={onLogout} className="text-caption text-text-secondary hover:text-warning">Выход</button>
-    </div>
-  </header>;
+interface HeaderProps {
+  currentStep: number;
+  userEmail?: string | null;
+  onNavigate: (step: number) => void;
+  onLogout: () => void;
+  onGoHome?: () => void;
+  isHomeView?: boolean;
+}
+
+export default function Header({
+  currentStep,
+  userEmail,
+  onNavigate,
+  onLogout,
+  onGoHome,
+  isHomeView,
+}: HeaderProps) {
+  return (
+    <header className="bg-white border-b border-surface-border sticky top-0 z-20">
+      <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
+        {/* Brand */}
+        <div className="flex items-center gap-6">
+          <button
+            onClick={onGoHome}
+            className="flex items-center gap-2 group text-left focus:outline-none"
+          >
+            <span className="w-9 h-9 rounded-button bg-primary text-white font-extrabold flex items-center justify-center text-lg shadow-purple group-hover:bg-primary-hover transition-all">
+              A
+            </span>
+            <div>
+              <span className="text-xl font-bold text-ink tracking-tight block">
+                Admit<span className="text-primary">Path</span>
+              </span>
+              <span className="text-[10px] text-ink-muted -mt-1 block font-medium">AI Admission Copilot</span>
+            </div>
+          </button>
+
+          {/* Navigation links if user is authenticated / completed steps */}
+          {userEmail && (
+            <nav className="hidden lg:flex items-center gap-1 bg-surface-muted p-1 rounded-full border border-surface-border text-xs font-semibold">
+              <button
+                onClick={onGoHome}
+                className={`px-3 py-1.5 rounded-full transition-all ${
+                  isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                🏠 Дашборд
+              </button>
+              <button
+                onClick={() => onNavigate(2)}
+                className={`px-3 py-1.5 rounded-full transition-all ${
+                  currentStep === 2 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                Профиль
+              </button>
+              <button
+                onClick={() => onNavigate(3)}
+                className={`px-3 py-1.5 rounded-full transition-all ${
+                  currentStep === 3 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                Диагностика
+              </button>
+              <button
+                onClick={() => onNavigate(4)}
+                className={`px-3 py-1.5 rounded-full transition-all ${
+                  currentStep === 4 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                Вузы
+              </button>
+              <button
+                onClick={() => onNavigate(6)}
+                className={`px-3 py-1.5 rounded-full transition-all ${
+                  currentStep === 6 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                Roadmap
+              </button>
+            </nav>
+          )}
+        </div>
+
+        {/* User profile & controls */}
+        <div className="flex items-center gap-3">
+          {userEmail ? (
+            <div className="flex items-center gap-2">
+              <div className="hidden sm:flex flex-col text-right">
+                <span className="text-xs font-semibold text-ink truncate max-w-[180px]">
+                  {userEmail}
+                </span>
+                <span className="text-[11px] text-success font-medium">Аккаунт подключен</span>
+              </div>
+              <button
+                onClick={onLogout}
+                className="text-xs font-semibold px-3 py-1.5 rounded-button text-danger hover:bg-danger-muted border border-transparent hover:border-danger/20 transition-all"
+              >
+                Выйти
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => onNavigate(1)}
+              className="text-xs font-semibold text-primary hover:underline"
+            >
+              Войти в аккаунт
+            </button>
+          )}
+        </div>
+      </div>
+    </header>
+  );
 }

@@ -1,38 +1,47 @@
 /* ============================================================
-   AdmitPath — Core Type Definitions
-   All shared types for profile, diagnosis, universities, etc.
+   AdmitPath — Core Type Definitions (7-Step Flow)
    ============================================================ */
 
-// ── Profile (user input from onboarding) ──
-
-export type GradeLevel = 9 | 10 | 11;
-export type SchoolType = "general" | "nis" | "bil" | "lyceum" | "gymnasium" | "other";
-export type GPAScale = "4.0" | "5.0";
 export type Region = "kazakhstan" | "europe" | "asia" | "usa";
 export type BudgetTier = "grant" | "5k" | "15k" | "25k+";
 export type Priority = "prestige" | "career" | "city" | "cost";
 
-export interface OlympiadEntry {
-  name: string;
-  level: "school" | "city" | "region" | "national" | "international";
+export interface ExamDetail {
+  score?: number | null;
+  date?: string | null;
+  taken: boolean;
+}
+
+export interface ExamRecords {
+  ielts?: ExamDetail;
+  sat?: ExamDetail;
+  ent?: ExamDetail;
+  toefl?: ExamDetail;
+  duolingo?: ExamDetail;
+  [key: string]: ExamDetail | undefined;
 }
 
 export interface Profile {
-  grade: GradeLevel;
-  schoolType: SchoolType;
-  gpa: number;
-  gpaScale: GPAScale;
-  ielts: number | null;
-  sat: number | null;
-  ent: number | null;
-  olympiads: OlympiadEntry[];
-  specialties: string[];
-  regions: Region[];
-  budget: BudgetTier;
-  priorities: Priority[];
+  grade?: number;
+  interests?: string[];
+  gpa?: number;
+  gpaScale?: "4.0" | "5.0";
+  languages?: string[];
+  exams?: ExamRecords;
+  countries?: string[];
+  budget?: string; // e.g. "grant", "5000", "15000", "25000+"
+  timeline?: string; // e.g. "2025", "2026", "через год"
+  constraints?: string; // e.g. "только Европа, нужен грант"
+  // Legacy / helper aliases:
+  regions?: Region[];
+  specialties?: string[];
+  priorities?: Priority[];
+  ielts?: number | null;
+  sat?: number | null;
+  ent?: number | null;
+  schoolType?: string;
+  olympiads?: { name: string; level: string }[];
 }
-
-// ── Diagnosis Result ──
 
 export interface Factor {
   name: string;
@@ -48,9 +57,11 @@ export interface DiagnoseResult {
   readinessIndex: number;
   factors: Factor[];
   tier: ReadinessTier;
+  summary?: string;
+  strengths?: string[];
+  constraints?: string[];
+  goal?: string;
 }
-
-// ── University ──
 
 export type UniversityTier = "dream" | "target" | "safety";
 
@@ -75,8 +86,6 @@ export interface University {
   housing: { available: boolean; costPerMonth: number; description: string };
 }
 
-// ── Recommendations ──
-
 export interface RecommendedUniversity extends University {
   tier: UniversityTier;
   matchScore: number;
@@ -89,15 +98,14 @@ export interface RecommendResult {
   safety: RecommendedUniversity[];
 }
 
-// ── Roadmap ──
-
-export type RoadmapCategory = "exams" | "documents" | "essays";
+export type RoadmapCategory = "exams" | "documents" | "essays" | "recommendation_letters" | "submission";
 
 export interface RoadmapItem {
   id: string;
   title: string;
   description: string;
   category: RoadmapCategory;
+  resources: string[];
   deadline: string;
   completed: boolean;
   priority: "high" | "medium" | "low";
@@ -105,14 +113,13 @@ export interface RoadmapItem {
 
 export interface RoadmapResult {
   items: RoadmapItem[];
-  weeklyPriority: {
+  weeklyPriority?: {
     title: string;
     description: string;
   };
 }
 
 // ── Essay Draft ──
-
 export interface EssayAnswers {
   hook: string;
   journey: string;
@@ -126,34 +133,10 @@ export interface EssayDraftResult {
   suggestions: string[];
 }
 
-// ── Teacher Letter Template ──
-
-export interface TeacherLetterData {
-  studentName: string;
-  teacherName: string;
-  subject: string;
-  university: string;
-}
-
-// ── Preset Profiles for Jury ──
-
-export interface PresetProfile {
-  id: string;
-  name: string;
-  emoji: string;
-  description: string;
-  profile: Profile;
-}
-
-// ── Onboarding State ──
-
-export interface OnboardingState {
-  currentStep: number;
-  profile: Partial<Profile>;
-  diagnoseResult: DiagnoseResult | null;
-  recommendations: RecommendResult | null;
-  selectedForComparison: string[];
-  roadmap: RoadmapResult | null;
-  roadmapProgress: Record<string, boolean>;
-  essayAnswers: Partial<EssayAnswers>;
+export interface UserStreak {
+  currentStreak: number;
+  lastVisitDate: string;
+  targetUniversityId?: string;
+  targetUniversityName?: string;
+  targetProgram?: string;
 }

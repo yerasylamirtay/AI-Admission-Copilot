@@ -1,157 +1,188 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
-import { Skeleton } from '@/components/ui/Skeleton';
-import { Profile, DiagnoseResult } from '@/lib/types';
+import React from 'react';
+import { DiagnoseResult, Profile } from '@/lib/types';
 
-interface StepProps {
+interface Step3DiagnoseProps {
+  diagnosis: DiagnoseResult | null;
   profile: Partial<Profile>;
+  isLoadingDiagnose: boolean;
   onNext: () => void;
   onBack: () => void;
-  diagnoseResult: DiagnoseResult | null;
-  isLoadingDiagnose?: boolean;
-  [key: string]: any;
 }
 
 export default function Step3Diagnose({
+  diagnosis,
   profile,
+  isLoadingDiagnose,
   onNext,
   onBack,
-  diagnoseResult,
-  isLoadingDiagnose,
-}: StepProps) {
-  const [explanation, setExplanation] = useState<string | null>(null);
-  const [loadingExplanation, setLoadingExplanation] = useState(false);
-
-  useEffect(() => {
-    if (diagnoseResult) {
-      setLoadingExplanation(true);
-      fetch('/api/explain', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          profile,
-          university: null,
-          tier: diagnoseResult.tier,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => setExplanation(data.explanation))
-        .catch(() => setExplanation(null))
-        .finally(() => setLoadingExplanation(false));
-    }
-  }, [diagnoseResult]);
-
-  if (!diagnoseResult || isLoadingDiagnose) {
+}: Step3DiagnoseProps) {
+  if (isLoadingDiagnose || !diagnosis) {
     return (
-      <div className="max-w-4xl mx-auto space-y-8 py-12">
-        <div className="flex flex-col items-center gap-6">
-          <Skeleton variant="circle" className="w-48 h-48" />
-          <Skeleton className="h-6 w-48" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} variant="card" className="h-32" />
-          ))}
-        </div>
+      <div className="max-w-3xl mx-auto py-16 px-4 text-center space-y-6 animate-fade-in">
+        <div className="w-14 h-14 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+        <h2 className="text-2xl font-bold text-ink">AI анализирует ваш профиль...</h2>
+        <p className="text-sm text-ink-muted max-w-md mx-auto">
+          Рассчитываем детерминированный индекс готовности и формируем сильные стороны и цели поступления.
+        </p>
       </div>
     );
   }
 
-  const { readinessIndex, factors, tier } = diagnoseResult;
-  const scoreColor = readinessIndex >= 75 ? 'text-success' : readinessIndex >= 50 ? 'text-warning' : 'text-safety';
-  const strokeColor = readinessIndex >= 75 ? '#34D399' : readinessIndex >= 50 ? '#FBBF24' : '#94A3B8';
-  const tierLabel = tier === 'high' ? '🚀 Высокая готовность' : tier === 'medium' ? '📈 Средняя готовность' : '⚠️ Требуется подготовка';
+  const { readinessIndex, tier, factors, summary, strengths, constraints, goal } = diagnosis;
 
-  const circumference = 2 * Math.PI * 45;
-  const strokeDashoffset = circumference - (readinessIndex / 100) * circumference;
+  const tierBadge = {
+    high: { label: 'Высокая готовность', color: 'bg-success-muted text-success border-success/30' },
+    medium: { label: 'Средняя готовность', color: 'bg-warning-muted text-warning border-warning/30' },
+    low: { label: 'Требуется усиление', color: 'bg-danger-muted text-danger border-danger/30' },
+  }[tier] || { label: 'Оценивается', color: 'bg-primary-light text-primary border-primary/30' };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8 animate-slide-up pb-20">
-      {/* Readiness Circle */}
-      <div className="flex flex-col items-center space-y-4">
-        <h2 className="text-heading-md">Индекс готовности</h2>
+    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 space-y-8 animate-fade-in">
+      {/* Title */}
+      <div className="text-center space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-primary text-xs font-bold uppercase tracking-wider">
+          📊 Результаты диагностики
+        </div>
+        <h2 className="text-3xl font-extrabold text-ink">
+          Оценка шансов и готовности к поступлению
+        </h2>
+      </div>
 
-        <div className="relative w-48 h-48">
-          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" fill="transparent" stroke="#232838" strokeWidth="8" />
-            <circle
-              cx="50" cy="50" r="45"
-              fill="transparent"
-              stroke={strokeColor}
-              strokeWidth="8"
-              strokeDasharray={circumference}
-              strokeDashoffset={strokeDashoffset}
-              strokeLinecap="round"
-              className="transition-all duration-1000 ease-out"
+      {/* Main Readiness Index Banner */}
+      <div className="card p-8 text-center bg-white border border-surface-border shadow-soft relative overflow-hidden">
+        <div className="max-w-xl mx-auto space-y-4">
+          <div className="flex items-center justify-center gap-3">
+            <span className="text-5xl sm:text-6xl font-extrabold text-primary tracking-tight">
+              {readinessIndex}%
+            </span>
+            <div className="text-left">
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${tierBadge.color} mb-1`}>
+                {tierBadge.label}
+              </span>
+              <span className="text-xs text-ink-muted block">Индекс готовности</span>
+            </div>
+          </div>
+
+          {/* Progress visual */}
+          <div className="h-3 w-full bg-surface-muted rounded-full overflow-hidden">
+            <div
+              className="h-full bg-primary transition-all duration-700 ease-out rounded-full"
+              style={{ width: `${readinessIndex}%` }}
             />
-          </svg>
-          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className={`text-4xl font-bold ${scoreColor}`}>{readinessIndex}%</span>
           </div>
-        </div>
 
-        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-body-sm font-semibold ${
-          tier === 'high' ? 'bg-success-muted text-success border border-success/20' :
-          tier === 'medium' ? 'bg-warning-muted text-warning border border-warning/20' :
-          'bg-safety-muted text-safety border border-safety/20'
-        }`}>
-          {tierLabel}
+          {summary && (
+            <p className="text-sm text-ink-secondary leading-relaxed pt-2">
+              {summary}
+            </p>
+          )}
         </div>
       </div>
 
-      {/* Factor Cards */}
+      {/* AI Structured Synthesis: Strengths / Constraints / Goal */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {factors.map((factor) => {
-          const barColor = factor.score >= 75 ? 'bg-success' : factor.score >= 50 ? 'bg-warning' : 'bg-safety';
-          return (
-            <Card key={factor.name} className="p-6">
-              <div className="flex justify-between items-center mb-3">
-                <h4 className="text-card-title font-semibold">{factor.label}</h4>
-                <span className="text-caption text-text-secondary">Вес: {Math.round(factor.weight * 100)}%</span>
-              </div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="flex-1 h-2 bg-bg-border rounded-full overflow-hidden">
-                  <div className={`h-full ${barColor} transition-all duration-1000`} style={{ width: `${factor.score}%` }} />
-                </div>
-                <span className="text-body font-bold w-12 text-right">{factor.score}</span>
-              </div>
-              <p className="text-body-sm text-text-secondary">{factor.detail}</p>
-            </Card>
-          );
-        })}
+        {/* Strengths */}
+        <div className="card p-6 border-l-4 border-l-success">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-8 rounded-full bg-success-muted text-success flex items-center justify-center font-bold text-sm">
+              ✓
+            </span>
+            <h3 className="text-lg font-bold text-ink">Сильные стороны профиля</h3>
+          </div>
+          <ul className="space-y-2.5 text-sm text-ink-secondary">
+            {(strengths && strengths.length > 0 ? strengths : [
+              'Высокий средний балл GPA создает устойчивое преимущество',
+              'Четко сформированный интерес к профильному направлению',
+              'Хороший стартовый базис для подготовки к грантовым конкурсам'
+            ]).map((s, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-success font-bold mt-0.5">•</span>
+                <span>{s}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Constraints / Areas of growth */}
+        <div className="card p-6 border-l-4 border-l-warning">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-8 h-8 rounded-full bg-warning-muted text-warning flex items-center justify-center font-bold text-sm">
+              ⚡
+            </span>
+            <h3 className="text-lg font-bold text-ink">Ограничения и точки роста</h3>
+          </div>
+          <ul className="space-y-2.5 text-sm text-ink-secondary">
+            {(constraints && constraints.length > 0 ? constraints : [
+              'Необходимо подтвердить уровень владения языком официальным сертификатом',
+              'Рекомендуется усилить портфолио профильными проектами или олимпиадами',
+              'Важно соблюдать ранние дедлайн-окна для стипендиальных программ'
+            ]).map((c, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-warning font-bold mt-0.5">•</span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* AI Explanation */}
-      <Card className="p-6 border-accent/20 bg-accent/5">
-        <div className="flex items-start gap-4">
-          <span className="text-2xl flex-shrink-0">🤖</span>
-          <div className="flex-1">
-            <h3 className="text-card-title font-bold mb-2">AI Анализ профиля</h3>
-            {loadingExplanation ? (
-              <div className="space-y-2">
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-                <Skeleton className="h-4 w-4/6" />
-              </div>
-            ) : explanation ? (
-              <p className="text-body-sm leading-relaxed whitespace-pre-wrap">{explanation}</p>
-            ) : (
-              <p className="text-body-sm text-text-secondary">
-                ИИ-объяснение временно недоступно. Ваш индекс готовности: {readinessIndex}%.
-                Основные факторы: {factors.map((f) => `${f.label} (${f.score})`).join(', ')}.
+      {/* Goal Block */}
+      {goal && (
+        <div className="card p-6 bg-primary-light/40 border border-primary/20">
+          <div className="flex items-start gap-4">
+            <div className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-lg flex-shrink-0 shadow-purple">
+              🎯
+            </div>
+            <div>
+              <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-1">
+                Твоя образовательная цель
+              </span>
+              <p className="text-base font-semibold text-ink leading-relaxed">
+                {goal}
               </p>
-            )}
+            </div>
           </div>
         </div>
-      </Card>
+      )}
 
-      {/* Navigation */}
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} variant="secondary">Назад</Button>
-        <Button onClick={onNext}>Далее — Подбор вузов</Button>
+      {/* Factor breakdown bars */}
+      <div className="card p-6 space-y-4">
+        <h3 className="text-base font-bold text-ink mb-4">Детализация по факторам</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {factors.map((factor) => (
+            <div key={factor.name} className="p-4 rounded-card bg-surface-secondary border border-surface-border">
+              <div className="flex justify-between items-center mb-1.5">
+                <span className="text-xs font-bold text-ink">{factor.label}</span>
+                <span className="text-xs font-bold text-primary">{factor.score}%</span>
+              </div>
+              <div className="h-1.5 bg-surface-muted rounded-full overflow-hidden mb-2">
+                <div
+                  className="h-full bg-primary rounded-full transition-all"
+                  style={{ width: `${factor.score}%` }}
+                />
+              </div>
+              <p className="text-[11px] text-ink-muted leading-tight">{factor.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation actions */}
+      <div className="flex items-center justify-between pt-4 border-t border-surface-border">
+        <button
+          onClick={onBack}
+          className="btn-secondary text-xs py-3 px-6"
+        >
+          ← Назад к профилю
+        </button>
+        <button
+          onClick={onNext}
+          className="btn-primary text-sm py-3.5 px-8"
+        >
+          Подобрать университеты →
+        </button>
       </div>
     </div>
   );

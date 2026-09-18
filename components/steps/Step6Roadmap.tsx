@@ -1,211 +1,196 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Profile, RecommendResult, RoadmapResult, RoadmapCategory } from '@/lib/types';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
-import { Skeleton } from '@/components/ui/Skeleton';
+import React from 'react';
+import { RoadmapResult, RoadmapItem, RoadmapCategory } from '@/lib/types';
 
-interface StepProps {
-  profile: Partial<Profile>;
-  onNext: () => void;
-  onBack: () => void;
-  recommendations: RecommendResult | null;
-  selectedForComparison: string[];
+interface Step6RoadmapProps {
   roadmap: RoadmapResult | null;
   roadmapProgress: Record<string, boolean>;
   onToggleRoadmapItem: (id: string) => void;
-  onSetRoadmap?: (roadmap: RoadmapResult) => void;
-  [key: string]: any;
+  isLoadingRoadmap?: boolean;
+  onNext: () => void;
+  onBack: () => void;
 }
 
+const CATEGORY_META: Record<RoadmapCategory, { label: string; icon: string; color: string }> = {
+  exams: { label: 'Экзамены и тесты', icon: '📝', color: 'bg-primary-light text-primary border-primary/20' },
+  documents: { label: 'Документы и транскрипты', icon: '📁', color: 'bg-surface-muted text-ink-secondary border-surface-border' },
+  essays: { label: 'Мотивационные эссе', icon: '✍️', color: 'bg-warning-muted text-warning border-warning/20' },
+  recommendation_letters: { label: 'Рекомендательные письма', icon: '💌', color: 'bg-success-muted text-success border-success/20' },
+  submission: { label: 'Финальная подача', icon: '🚀', color: 'bg-primary text-white border-transparent' },
+};
+
 export default function Step6Roadmap({
-  profile,
-  recommendations,
-  selectedForComparison,
   roadmap,
   roadmapProgress,
   onToggleRoadmapItem,
-  onSetRoadmap,
-  onBack,
+  isLoadingRoadmap,
   onNext,
-}: StepProps) {
-  const [localRoadmap, setLocalRoadmap] = useState<RoadmapResult | null>(roadmap);
-  const [loading, setLoading] = useState(!roadmap);
-  const [filter, setFilter] = useState<RoadmapCategory | 'all'>('all');
-
-  useEffect(() => {
-    if (roadmap) {
-      setLocalRoadmap(roadmap);
-      setLoading(false);
-      return;
-    }
-
-    const fetchRoadmap = async () => {
-      setLoading(true);
-      try {
-        const allRecs = [
-          ...(recommendations?.dream ?? []),
-          ...(recommendations?.target ?? []),
-          ...(recommendations?.safety ?? []),
-        ];
-        const selectedUnis = allRecs.filter((u) => selectedForComparison.includes(u.id));
-
-        const res = await fetch('/api/roadmap', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ profile, universities: selectedUnis }),
-        });
-
-        if (!res.ok) throw new Error('Failed to fetch roadmap');
-        const data = await res.json();
-        const result = data.roadmap ?? data;
-        setLocalRoadmap(result);
-        onSetRoadmap?.(result);
-      } catch (error) {
-        console.error(error);
-        // Fallback roadmap
-        const fallback: RoadmapResult = {
-          items: [
-            { id: 'fb-1', title: 'Сдать IELTS / TOEFL', description: 'Зарегистрироваться и подготовиться к языковому экзамену', category: 'exams', deadline: '2027-01-15', completed: false, priority: 'high' },
-            { id: 'fb-2', title: 'Подготовить транскрипт', description: 'Запросить официальный транскрипт в школе', category: 'documents', deadline: '2027-02-01', completed: false, priority: 'medium' },
-            { id: 'fb-3', title: 'Написать мотивационное письмо', description: 'Составить черновик и получить обратную связь', category: 'essays', deadline: '2027-02-15', completed: false, priority: 'high' },
-            { id: 'fb-4', title: 'Запросить рекомендации', description: 'Попросить 2 учителей написать рекомендательные письма', category: 'documents', deadline: '2027-02-15', completed: false, priority: 'high' },
-            { id: 'fb-5', title: 'Подать заявки', description: 'Проверить и отправить все документы до дедлайна', category: 'documents', deadline: '2027-03-15', completed: false, priority: 'high' },
-          ],
-          weeklyPriority: { title: 'Сдать IELTS / TOEFL', description: 'Самый срочный экзамен — начните подготовку сегодня' },
-        };
-        setLocalRoadmap(fallback);
-        onSetRoadmap?.(fallback);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchRoadmap();
-  }, [roadmap]);
-
-  if (loading) {
+  onBack,
+}: Step6RoadmapProps) {
+  if (isLoadingRoadmap || !roadmap) {
     return (
-      <div className="max-w-4xl mx-auto space-y-6 py-8">
-        <h2 className="text-heading-md">Ваш Roadmap</h2>
-        <Skeleton className="h-16 w-full" />
-        {[1, 2, 3, 4].map((i) => (
-          <Skeleton key={i} variant="card" className="h-24" />
-        ))}
+      <div className="max-w-4xl mx-auto py-16 px-4 text-center space-y-6 animate-fade-in">
+        <div className="w-14 h-14 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+        <h2 className="text-2xl font-bold text-ink">AI строит пошаговый план поступления...</h2>
+        <p className="text-sm text-ink-muted max-w-md mx-auto">
+          Учитываем уже сданные вами экзамены, дедлайны выбранных вузов, шаблоны эссе и требования к документам.
+        </p>
       </div>
     );
   }
 
-  const items = localRoadmap?.items ?? [];
-  const filteredItems = items
-    .filter((item) => filter === 'all' || item.category === filter)
-    .sort((a, b) => {
-      // Completed items go to bottom
-      const aDone = roadmapProgress[a.id] ? 1 : 0;
-      const bDone = roadmapProgress[b.id] ? 1 : 0;
-      if (aDone !== bDone) return aDone - bDone;
-      // Then sort by deadline
-      return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
-    });
-
+  const items = roadmap.items || [];
   const completedCount = items.filter((item) => roadmapProgress[item.id]).length;
-  const totalCount = items.length;
-  const progressPercent = totalCount === 0 ? 0 : Math.round((completedCount / totalCount) * 100);
-
-  const getDeadlineColor = (dateStr: string) => {
-    const days = (new Date(dateStr).getTime() - Date.now()) / (1000 * 60 * 60 * 24);
-    if (days < 14) return 'text-red-400';
-    if (days < 30) return 'text-warning';
-    return 'text-success';
-  };
-
-  const getCategoryLabel = (cat: string) => {
-    switch (cat) {
-      case 'exams': return '📝 Экзамены';
-      case 'documents': return '📄 Документы';
-      case 'essays': return '✍️ Эссе';
-      default: return '📌 Другое';
-    }
-  };
+  const progressPercent = items.length > 0 ? Math.round((completedCount / items.length) * 100) : 0;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 animate-fade-in pb-20">
-      <h2 className="text-heading-md">Ваш Roadmap</h2>
-
-      {/* Progress bar */}
-      <Card className="p-4">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-body font-semibold">Выполнено {completedCount} из {totalCount}</span>
-          <span className="text-body-sm text-text-secondary">{progressPercent}%</span>
+    <div className="max-w-4xl mx-auto py-8 px-4 sm:px-6 space-y-8 animate-fade-in pb-20">
+      {/* Header */}
+      <div className="text-center space-y-2">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-primary text-xs font-bold uppercase tracking-wider">
+          📋 Персональный план
         </div>
-        <div className="w-full bg-bg-border h-2.5 rounded-full overflow-hidden">
-          <div className="bg-success h-full transition-all duration-500" style={{ width: `${progressPercent}%` }} />
-        </div>
-      </Card>
-
-      {/* Category filter */}
-      <div className="flex flex-wrap gap-2">
-        {(['all', 'exams', 'documents', 'essays'] as const).map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setFilter(cat)}
-            className={`chip ${filter === cat ? 'chip-active' : ''}`}
-          >
-            {cat === 'all' ? '📋 Все' : getCategoryLabel(cat)}
-          </button>
-        ))}
+        <h2 className="text-3xl font-extrabold text-ink">
+          Roadmap твоего поступления
+        </h2>
+        <p className="text-sm text-ink-muted max-w-xl mx-auto">
+          Адаптирован под твой профиль. Отмечай выполненные задачи — прогресс синхронизируется в облаке.
+        </p>
       </div>
 
-      {/* Items */}
-      <div className="space-y-3">
-        {filteredItems.map((item) => {
-          const isDone = roadmapProgress[item.id];
+      {/* Progress banner */}
+      <div className="card p-6 bg-white border border-surface-border shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-ink-muted block mb-1">
+            Общий прогресс подготовки
+          </span>
+          <p className="text-lg font-bold text-ink">
+            Выполнено {completedCount} из {items.length} шагов ({progressPercent}%)
+          </p>
+        </div>
+        <div className="w-full sm:w-64 h-3 bg-surface-muted rounded-full overflow-hidden">
+          <div
+            className="h-full bg-primary rounded-full transition-all duration-500"
+            style={{ width: `${progressPercent}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Weekly urgent priority alert if available */}
+      {roadmap.weeklyPriority && (
+        <div className="card p-5 bg-primary-light/60 border border-primary/20 flex items-start gap-3">
+          <span className="text-2xl flex-shrink-0">⚡</span>
+          <div>
+            <span className="text-xs font-bold text-primary uppercase tracking-wider block mb-0.5">
+              Фокус недели: {roadmap.weeklyPriority.title}
+            </span>
+            <p className="text-xs text-ink-secondary leading-relaxed">
+              {roadmap.weeklyPriority.description}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Step by step tasks list */}
+      <div className="space-y-4">
+        {items.map((item, idx) => {
+          const isDone = Boolean(roadmapProgress[item.id]);
+          const meta = CATEGORY_META[item.category] || CATEGORY_META.documents;
+
           return (
-            <Card
+            <div
               key={item.id}
-              className={`p-4 flex items-start gap-4 transition-all duration-200 ${
-                isDone ? 'opacity-50' : 'hover:-translate-y-0.5'
+              className={`card p-5 transition-all duration-200 border ${
+                isDone
+                  ? 'bg-surface-secondary/40 border-surface-border opacity-75'
+                  : 'bg-white border-surface-border hover:border-primary/40 shadow-soft'
               }`}
             >
-              <div className="mt-0.5">
-                <input
-                  type="checkbox"
-                  checked={isDone ?? false}
-                  onChange={() => onToggleRoadmapItem(item.id)}
-                  className="w-5 h-5 rounded border-bg-border cursor-pointer accent-accent"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-start justify-between flex-wrap gap-2">
-                  <h3 className={`text-card-title font-semibold ${isDone ? 'line-through text-text-secondary' : ''}`}>
-                    {item.title}
-                  </h3>
-                  <span className={`text-caption px-2 py-0.5 rounded-full ${
-                    item.priority === 'high' ? 'bg-red-500/10 text-red-400 border border-red-500/20' :
-                    item.priority === 'medium' ? 'bg-warning-muted text-warning border border-warning/20' :
-                    'bg-bg-border text-text-secondary'
-                  }`}>
-                    {item.priority === 'high' ? '🔴 Важно' : item.priority === 'medium' ? '🟡 Средний' : '🟢 Низкий'}
-                  </span>
+              <div className="flex items-start gap-4">
+                {/* Custom Large Checkbox */}
+                <button
+                  type="button"
+                  onClick={() => onToggleRoadmapItem(item.id)}
+                  className={`w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold transition-all mt-0.5 flex-shrink-0 ${
+                    isDone
+                      ? 'bg-primary border-primary text-white shadow-purple'
+                      : 'border-surface-border hover:border-primary bg-white text-transparent'
+                  }`}
+                >
+                  ✓
+                </button>
+
+                <div className="flex-1 space-y-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h4
+                      className={`text-base font-bold text-ink ${
+                        isDone ? 'line-through text-ink-muted' : ''
+                      }`}
+                    >
+                      {item.title}
+                    </h4>
+
+                    <div className="flex items-center gap-2">
+                      <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${meta.color}`}>
+                        {meta.icon} {meta.label}
+                      </span>
+                      <span className="text-xs font-bold text-ink-muted">
+                        📅 {item.deadline}
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-ink-secondary leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  {/* Attached Resources */}
+                  {item.resources && item.resources.length > 0 && (
+                    <div className="pt-2 mt-2 border-t border-surface-border/60">
+                      <span className="text-[11px] font-bold text-ink-muted block mb-1.5">
+                        🔗 Материалы и ресурсы:
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {item.resources.map((res, rIdx) => {
+                          const isUrl = res.startsWith('http');
+                          return isUrl ? (
+                            <a
+                              key={rIdx}
+                              href={res}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="chip text-[11px] py-1 bg-surface-muted hover:bg-primary-light text-primary inline-flex items-center gap-1 font-semibold"
+                            >
+                              <span>🌐</span> {res.replace(/^https?:\/\//, '').split('/')[0]} ↗
+                            </a>
+                          ) : (
+                            <span
+                              key={rIdx}
+                              className="px-2.5 py-1 rounded-full text-[11px] bg-surface-muted border border-surface-border text-ink-secondary font-medium"
+                            >
+                              📎 {res}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <p className="text-body-sm text-text-secondary mt-1">{item.description}</p>
-                <div className="flex items-center gap-4 mt-2 text-caption">
-                  <span className="text-text-secondary">{getCategoryLabel(item.category)}</span>
-                  <span className={isDone ? 'text-text-secondary' : getDeadlineColor(item.deadline)}>
-                    📅 {new Date(item.deadline).toLocaleDateString('ru-RU')}
-                  </span>
-                </div>
               </div>
-            </Card>
+            </div>
           );
         })}
       </div>
 
       {/* Navigation */}
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} variant="secondary">Назад</Button>
-        <Button onClick={onNext}>Далее — Финал</Button>
+      <div className="flex justify-between items-center pt-4 border-t border-surface-border">
+        <button onClick={onBack} className="btn-secondary text-xs py-3 px-6">
+          ← Назад к сравнению
+        </button>
+        <button onClick={onNext} className="btn-primary text-sm py-3.5 px-8">
+          Перейти к следующему шагу (Дашборд) →
+        </button>
       </div>
     </div>
   );

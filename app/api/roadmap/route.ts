@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { callClaude } from '@/lib/claude';
 import { Profile, University, RoadmapResult, RoadmapItem } from '@/lib/types';
-import { checkAndIncrementBudget } from '@/lib/token-budget';
 
 export async function POST(request: Request) {
   try {
@@ -12,149 +11,165 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing profile or universities' }, { status: 400 });
     }
 
-    const uniList = universities.map(u => `${u.name} (Deadline: ${u.deadline})`).join(', ');
+    const uniList = universities.map(u => `${u.name} (Дедлайн: ${u.deadline}, Город/Страна: ${u.city || u.country})`).join('; ');
 
-    const systemPrompt = `You are an expert admission planner. Generate a personalized step-by-step preparation plan in Russian for a student applying to universities.
+    // Extract taken exams
+    const examsObj = profile.exams || {};
+    const takenExamsList: string[] = [];
+    const plannedExamsList: string[] = [];
 
-Return ONLY valid JSON matching this EXACT schema:
+    if (examsObj.ielts?.taken && examsObj.ielts.score) takenExamsList.push(`IELTS ${examsObj.ielts.score} (сдан ${examsObj.ielts.date || ''})`);
+    else plannedExamsList.push('IELTS / TOEFL');
+
+    if (examsObj.sat?.taken && examsObj.sat.score) takenExamsList.push(`SAT ${examsObj.sat.score} (сдан ${examsObj.sat.date || ''})`);
+    else plannedExamsList.push('SAT');
+
+    if (examsObj.ent?.taken && examsObj.ent.score) takenExamsList.push(`ЕНТ ${examsObj.ent.score} (сдан ${examsObj.ent.date || ''})`);
+    else plannedExamsList.push('ЕНТ');
+
+    const systemPrompt = `Ты — ведущий эксперт по составлению индивидуального плана поступления в вузы.
+Создай детальный, реалистичный план (Roadmap) на русском языке.
+
+ВНИМАНИЕ К ПРАВИЛАМ:
+1. Адаптивность к сданным экзаменам:
+   - УЖЕ СДАННЫЕ ЭКЗАМЕНЫ (${takenExamsList.join(', ') || 'нет'}) НЕ ВКЛЮЧАТЬ в план как "нужно сдать"! Они уже сданы.
+   - Если нужный экзамен не сдан (${plannedExamsList.join(', ')}), включи конкретные шаги подготовки и сдачи.
+2. Обязательно включи следующие ключевые шаги:
+   - "Как заполнить анкету/заявку" (конкретные разделы: Academic history, Activities, Personal statement).
+   - "Структура эссе" (Hook, Personal Journey, Why Us, Future Impact).
+   - "Как запросить рекомендательное письмо у учителя" (шаблон вежливой просьбы, бриф с достижениями).
+   - "Когда и как подавать" (с точным дедлайном и ссылкой на приёмную комиссию).
+3. Каждая задача ОБЯЗАТЕЛЬНО должна содержать массив "resources" — полезные ссылки, чек-листы, шаблоны.
+
+ФОРМАТ ОТВЕТА (строго валидный JSON):
 {
   "items": [
     {
-      "id": "string (unique, e.g. 'task-1')",
-      "title": "string (task title in Russian)",
-      "description": "string (detailed description in Russian)",
-      "category": "exams" | "documents" | "essays",
+      "id": "step-1",
+      "title": "Название шага",
+      "description": "Конкретная подробная инструкция что именно делать",
+      "category": "exams" | "documents" | "essays" | "recommendation_letters" | "submission",
+      "resources": [
+        "https://example.com/portal",
+        "Шаблон структуры эссе (Hook-Journey-WhyUs)",
+        "Чек-лист документов абитуриента"
+      ],
       "deadline": "YYYY-MM-DD",
       "completed": false,
       "priority": "high" | "medium" | "low"
     }
   ],
   "weeklyPriority": {
-    "title": "string (most urgent task this week, in Russian)",
-    "description": "string (why it's urgent, in Russian)"
+    "title": "Самая приоритетная задача на ближайшие 7 дней",
+    "description": "Почему это критически важно выполнить прямо сейчас"
   }
-}
+}`;
 
-Generate 8-12 tasks covering all three categories. Base deadlines on the university deadlines provided. Order tasks chronologically. Make descriptions specific and actionable.`;
+    const earliestDeadline = universities.map(u => u.deadline).sort()[0] || '2026-12-01';
+    const deadlineDate = new Date(earliestDeadline);
 
-    const userMessage = `Student profile: GPA ${profile.gpa}, IELTS ${profile.ielts ?? 'not taken'}, SAT ${profile.sat ?? 'not taken'}, ENT ${profile.ent ?? 'not taken'}.
-Target universities: ${uniList}`;
+    const userMessage = `Профиль абитуриента:
+- Класс: ${profile.grade || '11'}
+- Успеваемость GPA: ${profile.gpa || 4.5}
+- Сданные экзамены: ${takenExamsList.join(', ') || 'Нет (все в процессе)'}
+- Планируемые экзамены: ${plannedExamsList.join(', ')}
+- Целевые университеты: ${uniList}
+- Ближайший дедлайн подачи: ${earliestDeadline}`;
 
-    const buildFallback = () => {
-      const earliestDeadline = universities.map(u => u.deadline).sort()[0] || '2027-03-01';
-      const deadlineDate = new Date(earliestDeadline);
-      const items: RoadmapItem[] = [
-        ['Сдать IELTS / TOEFL', 'Зарегистрироваться и сдать языковой экзамен.', 'exams', 90, 'high'],
-        ['Подготовить SAT / ЕНТ', 'Пройти пробные тесты и зарегистрироваться на экзамен.', 'exams', 75, 'high'],
-        ['Собрать транскрипт оценок', 'Запросить официальный транскрипт в школе.', 'documents', 60, 'medium'],
-        ['Написать мотивационное письмо', 'Составить черновик и получить обратную связь.', 'essays', 45, 'high'],
-        ['Запросить рекомендательные письма', 'Попросить учителей написать рекомендации.', 'documents', 45, 'high'],
-        ['Подать заявки', `Финальная подача заявок до ${earliestDeadline}.`, 'documents', 0, 'high'],
-      ].map(([title, description, category, days, priority], index) => ({ id: `task-${index + 1}`, title: title as string, description: description as string, category: category as RoadmapItem['category'], deadline: new Date(deadlineDate.getTime() - Number(days) * 86400000).toISOString().split('T')[0], completed: false, priority: priority as RoadmapItem['priority'] }));
-      return { items, weeklyPriority: { title: items[0].title, description: 'Это самый срочный пункт вашего плана. Начните с него сегодня.' } };
-    };
-    if (!checkAndIncrementBudget().allowed) return NextResponse.json({ roadmap: buildFallback(), source: 'fallback' });
     try {
-      const resultText = await callClaude(systemPrompt, userMessage, 1200);
-      // Try to extract JSON from response (handle markdown code blocks)
+      const resultText = await callClaude(systemPrompt, userMessage, 1500);
       const jsonMatch = resultText.match(/\{[\s\S]*\}/);
-      if (!jsonMatch) throw new Error('No JSON found in response');
-      const parsed = JSON.parse(jsonMatch[0]) as RoadmapResult;
-      return NextResponse.json({ roadmap: parsed, source: 'ai' }, { status: 200 });
-    } catch (aiError) {
-      console.warn('Claude API failed in /api/roadmap, using fallback:', aiError);
-
-      // Generate template roadmap from university deadlines
-      const earliestDeadline = universities.map(u => u.deadline).sort()[0] || '2027-03-01';
-
-      const deadlineDate = new Date(earliestDeadline);
-      const items: RoadmapItem[] = [
-        {
-          id: 'task-1',
-          title: 'Сдать IELTS / TOEFL',
-          description: 'Зарегистрироваться и сдать языковой экзамен. Результат нужен минимум за 2 месяца до дедлайна.',
-          category: 'exams',
-          deadline: new Date(deadlineDate.getTime() - 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'high',
-        },
-        {
-          id: 'task-2',
-          title: 'Подготовить SAT / ЕНТ',
-          description: 'Пройти пробные тесты и зарегистрироваться на экзамен.',
-          category: 'exams',
-          deadline: new Date(deadlineDate.getTime() - 75 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'high',
-        },
-        {
-          id: 'task-3',
-          title: 'Собрать транскрипт оценок',
-          description: 'Запросить официальный транскрипт в школе. Перевод и нотариальное заверение если нужно.',
-          category: 'documents',
-          deadline: new Date(deadlineDate.getTime() - 60 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'medium',
-        },
-        {
-          id: 'task-4',
-          title: 'Написать мотивационное письмо',
-          description: 'Составить черновик, получить обратную связь от учителя/ментора, отредактировать.',
-          category: 'essays',
-          deadline: new Date(deadlineDate.getTime() - 45 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'high',
-        },
-        {
-          id: 'task-5',
-          title: 'Запросить рекомендательные письма',
-          description: 'Попросить 2-3 учителей написать рекомендации. Дать им достаточно времени (минимум 3 недели).',
-          category: 'documents',
-          deadline: new Date(deadlineDate.getTime() - 45 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'high',
-        },
-        {
-          id: 'task-6',
-          title: 'Подготовить копию паспорта',
-          description: 'Сделать скан-копию паспорта. Проверить срок действия.',
-          category: 'documents',
-          deadline: new Date(deadlineDate.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'low',
-        },
-        {
-          id: 'task-7',
-          title: 'Написать эссе Why Us',
-          description: 'Для каждого вуза написать персонализированное эссе "Почему именно этот университет".',
-          category: 'essays',
-          deadline: new Date(deadlineDate.getTime() - 21 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          completed: false,
-          priority: 'medium',
-        },
-        {
-          id: 'task-8',
-          title: 'Подать заявки',
-          description: `Финальная подача заявок. Дедлайн: ${earliestDeadline}. Проверить все документы дважды.`,
-          category: 'documents',
-          deadline: earliestDeadline,
-          completed: false,
-          priority: 'high',
-        },
-      ];
-
-      const fallbackRoadmap: RoadmapResult = {
-        items,
-        weeklyPriority: {
-          title: items[0].title,
-          description: 'Это самый срочный пункт вашего плана. Начните с него сегодня.',
-        },
-      };
-
-      return NextResponse.json({ roadmap: fallbackRoadmap, source: 'fallback' }, { status: 200 });
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]) as RoadmapResult;
+        if (parsed.items && Array.isArray(parsed.items) && parsed.items.length > 0) {
+          return NextResponse.json({ roadmap: parsed });
+        }
+      }
+    } catch (aiErr: any) {
+      console.warn('Claude roadmap generation failed, using adaptive fallback:', aiErr.message);
     }
-  } catch (error) {
-    console.error('Error in /api/roadmap:', error);
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+
+    // Adaptive Fallback
+    const fallbackItems: RoadmapItem[] = [];
+    let stepCount = 1;
+
+    // Only add exam step if needed
+    if (!examsObj.ielts?.taken) {
+      fallbackItems.push({
+        id: `step-${stepCount++}`,
+        title: 'Регистрация и сдача IELTS / TOEFL',
+        description: 'Зарегистрироваться на тест в официальном тест-центре (British Council / IDP) минимум за 3 месяца до дедлайна.',
+        category: 'exams',
+        resources: ['https://www.ielts.org', 'Кембриджские практические тесты 15-18', 'Чек-лист подготовки к Speaking & Writing'],
+        deadline: new Date(deadlineDate.getTime() - 90 * 86400000).toISOString().split('T')[0],
+        completed: false,
+        priority: 'high',
+      });
+    }
+
+    fallbackItems.push(
+      {
+        id: `step-${stepCount++}`,
+        title: 'Сбор официального транскрипта и справок',
+        description: 'Запросить в школьной канцелярии табель/транскрипт с оценками за 9-11 классы с переводом на английский язык и печатью.',
+        category: 'documents',
+        resources: ['Образец перевода школьного транскрипта', 'Шаблон нотариального перевода'],
+        deadline: new Date(deadlineDate.getTime() - 75 * 86400000).toISOString().split('T')[0],
+        completed: false,
+        priority: 'medium',
+      },
+      {
+        id: `step-${stepCount++}`,
+        title: 'Запрос рекомендательных писем у преподавателей',
+        description: 'Обратиться к 2 профильным учителям. Предоставить им свой бриф (список достижений, олимпиад и целей), чтобы письмо получилось содержательным.',
+        category: 'recommendation_letters',
+        resources: ['Шаблон письма-просьбы учителю', 'Гайд: что должно быть в сильном Recommendation Letter'],
+        deadline: new Date(deadlineDate.getTime() - 60 * 86400000).toISOString().split('T')[0],
+        completed: false,
+        priority: 'high',
+      },
+      {
+        id: `step-${stepCount++}`,
+        title: 'Написание мотивационного эссе (Personal Statement)',
+        description: 'Сформулировать историю по структуре 4 блоков: Hook (захватывающее начало) → Journey (твой академический путь) → Why Us (почему именно этот вуз) → Future Impact (как знания изменят мир).',
+        category: 'essays',
+        resources: ['Интерактивный конструктор эссе AdmitPath', '10 примеров успешных эссе в топ-вузы'],
+        deadline: new Date(deadlineDate.getTime() - 45 * 86400000).toISOString().split('T')[0],
+        completed: false,
+        priority: 'high',
+      },
+      {
+        id: `step-${stepCount++}`,
+        title: 'Заполнение разделов официальной анкеты вуза',
+        description: 'Создать аккаунт на портале приёмной комиссии или Common App. Внести паспортные данные, список внеучебных активностей (Extracurriculars) и загрузить черновики.',
+        category: 'documents',
+        resources: ['Портал приёмной комиссии: ' + (universities[0]?.name || 'вуза'), 'Гайд по описанию внеучебных активностей'],
+        deadline: new Date(deadlineDate.getTime() - 30 * 86400000).toISOString().split('T')[0],
+        completed: false,
+        priority: 'high',
+      },
+      {
+        id: `step-${stepCount++}`,
+        title: 'Финальная подача заявки и подтверждение документов',
+        description: `Отправить готовую форму до официального дедлайна (${earliestDeadline}). Проверить статус получения транскрипта и рекомендаций.`,
+        category: 'submission',
+        resources: ['Официальный календарь дедлайнов', 'Финальный чек-лист перед нажатием Submit'],
+        deadline: earliestDeadline,
+        completed: false,
+        priority: 'high',
+      }
+    );
+
+    const fallbackResult: RoadmapResult = {
+      items: fallbackItems,
+      weeklyPriority: {
+        title: fallbackItems[0].title,
+        description: 'Это самый срочный этап вашей подготовки. Рекомендуем сфокусироваться на нем в первую очередь.'
+      }
+    };
+
+    return NextResponse.json({ roadmap: fallbackResult });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message || 'Roadmap error' }, { status: 500 });
   }
 }

@@ -1,21 +1,16 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
-import { Skeleton } from '@/components/ui/Skeleton';
 import { Profile, RecommendResult, RecommendedUniversity } from '@/lib/types';
 
-interface StepProps {
+interface Step4RecommendationsProps {
   profile: Partial<Profile>;
-  onNext: () => void;
-  onBack: () => void;
   recommendations: RecommendResult | null;
   selectedForComparison: string[];
   onToggleComparison: (id: string) => void;
   isLoadingRecommend?: boolean;
-  [key: string]: any;
+  onNext: () => void;
+  onBack: () => void;
 }
 
 function UniCard({
@@ -51,102 +46,139 @@ function UniCard({
   }, [uni.id]);
 
   const countryFlag: Record<string, string> = {
-    'Kazakhstan': '🇰🇿', 'Germany': '🇩🇪', 'Estonia': '🇪🇪', 'Czech Republic': '🇨🇿',
-    'Poland': '🇵🇱', 'Sweden': '🇸🇪', 'Singapore': '🇸🇬', 'South Korea': '🇰🇷',
-    'Japan': '🇯🇵', 'Hong Kong': '🇭🇰', 'USA': '🇺🇸', 'United States': '🇺🇸',
+    Kazakhstan: '🇰🇿',
+    Germany: '🇩🇪',
+    Estonia: '🇪🇪',
+    'Czech Republic': '🇨🇿',
+    Poland: '🇵🇱',
+    Sweden: '🇸🇪',
+    Singapore: '🇸🇬',
+    'South Korea': '🇰🇷',
+    Japan: '🇯🇵',
+    'Hong Kong': '🇭🇰',
+    USA: '🇺🇸',
+    'United States': '🇺🇸',
+    Switzerland: '🇨🇭',
+    Netherlands: '🇳🇱',
+    Austria: '🇦🇹',
+    Italy: '🇮🇹',
+    France: '🇫🇷',
+    Spain: '🇪🇸',
+    Ireland: '🇮🇪',
+    UK: '🇬🇧',
+    China: '🇨🇳',
+    Taiwan: '🇹🇼',
   };
 
   return (
-    <Card className={`p-5 flex flex-col h-full animate-fade-in transition-all duration-200 ${
-      isSelected ? 'border-accent shadow-card-hover' : ''
-    }`}>
-      <div className="flex justify-between items-start mb-4">
-        <div>
-          <h3 className="text-card-title font-bold">{uni.name}</h3>
-          <p className="text-caption text-text-secondary mt-1">
-            {countryFlag[uni.country] ?? '🌍'} {uni.country}
-          </p>
-          {(uni as any).city && <p className="text-caption text-text-secondary">{(uni as any).city}, {(uni as any).address}</p>}
-        </div>
-        <button
-          onClick={() => onToggle(uni.id)}
-          className={`px-3 py-1.5 text-caption rounded-full font-medium transition-all ${
-            isSelected
-              ? 'bg-accent text-white'
-              : 'bg-bg border border-bg-border text-text-secondary hover:border-accent/50'
-          }`}
-        >
-          {isSelected ? '✓ Выбрано' : '+ Сравнить'}
-        </button>
-      </div>
-
-      <div className="grid grid-cols-2 gap-3 mb-4 text-body-sm">
-        <div>
-          <span className="text-text-secondary block text-caption">💰 Стоимость</span>
-          <span className="font-semibold">${uni.tuition.toLocaleString()}/год</span>
-        </div>
-        <div>
-          <span className="text-text-secondary block text-caption">📊 Min GPA</span>
-          <span className="font-semibold">{uni.gpaReq}</span>
-        </div>
-        <div>
-          <span className="text-text-secondary block text-caption">🌐 IELTS</span>
-          <span className="font-semibold">{uni.ieltsReq ?? '—'}</span>
-        </div>
-        <div>
-          <span className="text-text-secondary block text-caption">📅 Дедлайн</span>
-          <span className="font-semibold">{new Date(uni.deadline).toLocaleDateString('ru-RU')}</span>
-        </div>
-      </div>
-
-      {/* Acceptance rate bar */}
-      <div className="mb-4">
-        <div className="flex justify-between text-caption mb-1">
-          <span className="text-text-secondary">Acceptance Rate</span>
-          <span>{Math.round(uni.acceptanceRate * 100)}%</span>
-        </div>
-        <div className="h-1.5 bg-bg-border rounded-full overflow-hidden">
-          <div className="h-full bg-accent transition-all" style={{ width: `${uni.acceptanceRate * 100}%` }} />
-        </div>
-      </div>
-
-      {/* AI Explanation */}
-      <div className="mt-auto pt-3 border-t border-bg-border">
-        {loading ? (
-          <div className="space-y-1.5">
-            <Skeleton className="h-3 w-full" />
-            <Skeleton className="h-3 w-4/5" />
+    <div
+      className={`card p-6 flex flex-col justify-between transition-all duration-200 relative ${
+        isSelected ? 'border-primary ring-2 ring-primary/20 shadow-card-hover' : 'hover:border-primary/40'
+      }`}
+    >
+      <div>
+        {/* Top header */}
+        <div className="flex justify-between items-start gap-3 mb-3">
+          <div>
+            <h4 className="text-lg font-bold text-ink tracking-tight leading-snug">{uni.name}</h4>
+            <p className="text-xs font-medium text-ink-muted mt-0.5 flex items-center gap-1.5">
+              <span>{countryFlag[uni.country] ?? '🌍'}</span>
+              <span>{uni.country}</span>
+              {uni.city && <span>· {uni.city}</span>}
+            </p>
+            {uni.address && (
+              <p className="text-[11px] text-ink-light truncate max-w-[280px] mt-0.5">
+                📍 {uni.address}
+              </p>
+            )}
           </div>
-        ) : explanation ? (
-          <p className="text-caption text-text-secondary leading-relaxed">🤖 {explanation}</p>
-        ) : (
-          <p className="text-caption text-text-secondary italic">
-            Match Score: {uni.matchScore}%
-          </p>
+
+          <button
+            type="button"
+            onClick={() => onToggle(uni.id)}
+            className={`px-3 py-1.5 text-xs font-semibold rounded-full transition-all flex-shrink-0 ${
+              isSelected
+                ? 'bg-primary text-white shadow-purple'
+                : 'bg-surface-muted text-ink-secondary hover:text-primary hover:bg-primary-light border border-surface-border'
+            }`}
+          >
+            {isSelected ? '✓ Выбрано' : '+ В сравнение'}
+          </button>
+        </div>
+
+        {/* Key Metrics Grid */}
+        <div className="grid grid-cols-2 gap-2.5 py-3 my-3 border-y border-surface-border text-xs">
+          <div className="p-2 rounded-lg bg-surface-secondary">
+            <span className="text-ink-muted block text-[11px]">💰 Стоимость</span>
+            <span className="font-bold text-ink">
+              {uni.tuition === 0 ? 'Грант ($0)' : `$${uni.tuition.toLocaleString()}/год`}
+            </span>
+          </div>
+
+          <div className="p-2 rounded-lg bg-surface-secondary">
+            <span className="text-ink-muted block text-[11px]">📊 Проходной GPA</span>
+            <span className="font-bold text-ink">{uni.gpaReq || 'От 3.5'}</span>
+          </div>
+
+          <div className="p-2 rounded-lg bg-surface-secondary">
+            <span className="text-ink-muted block text-[11px]">🌐 Тесты</span>
+            <span className="font-bold text-ink">
+              {uni.ieltsReq ? `IELTS ${uni.ieltsReq}` : uni.satReq ? `SAT ${uni.satReq}` : uni.entReq ? `ЕНТ ${uni.entReq}` : 'Без требований'}
+            </span>
+          </div>
+
+          <div className="p-2 rounded-lg bg-surface-secondary">
+            <span className="text-ink-muted block text-[11px]">📅 Дедлайн</span>
+            <span className="font-bold text-ink">
+              {uni.deadline ? new Date(uni.deadline).toLocaleDateString('ru-RU') : '2026-07-15'}
+            </span>
+          </div>
+        </div>
+
+        {/* Scholarships & Housing */}
+        {uni.scholarships && (
+          <div className="mb-3 text-xs text-ink-secondary bg-primary-light/50 p-2.5 rounded-lg border border-primary/10">
+            <span className="font-bold text-primary block text-[11px] mb-0.5">🎓 Гранты & Стипендии:</span>
+            <p className="line-clamp-2">{uni.scholarships}</p>
+          </div>
         )}
       </div>
-    </Card>
+
+      {/* AI Explanation Footer */}
+      <div className="pt-3 mt-2 border-t border-surface-border">
+        {loading ? (
+          <div className="space-y-1.5 animate-pulse">
+            <div className="h-3 bg-surface-muted rounded w-full" />
+            <div className="h-3 bg-surface-muted rounded w-4/5" />
+          </div>
+        ) : (
+          <div className="text-xs text-ink-secondary leading-relaxed bg-surface-secondary p-3 rounded-xl border border-surface-border">
+            <span className="font-bold text-primary mr-1">🤖 AI-оценка:</span>
+            {explanation || `Совпадение профиля: ${uni.matchScore}%. Рекомендуется к подаче.`}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 
 export default function Step4Recommendations({
   profile,
-  onNext,
-  onBack,
   recommendations,
   selectedForComparison,
   onToggleComparison,
   isLoadingRecommend,
-}: StepProps) {
-  if (!recommendations || isLoadingRecommend) {
+  onNext,
+  onBack,
+}: Step4RecommendationsProps) {
+  if (isLoadingRecommend || !recommendations) {
     return (
-      <div className="max-w-5xl mx-auto space-y-8 py-12">
-        <Skeleton className="h-10 w-64 mx-auto" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} variant="card" className="h-48" />
-          ))}
-        </div>
+      <div className="max-w-5xl mx-auto py-16 px-4 text-center space-y-6 animate-fade-in">
+        <div className="w-14 h-14 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
+        <h2 className="text-2xl font-bold text-ink">ИИ подбирает университеты...</h2>
+        <p className="text-sm text-ink-muted max-w-md mx-auto">
+          Сравниваем требования 120+ вузов с вашим средним баллом, тестами и бюджетом.
+        </p>
       </div>
     );
   }
@@ -154,28 +186,41 @@ export default function Step4Recommendations({
   const { dream, target, safety } = recommendations;
   const total = dream.length + target.length + safety.length;
 
-  const tierSections = [
-    { key: 'dream', title: '🌟 Dream', subtitle: 'Сложно, но возможно', unis: dream, badgeClass: 'badge-dream' },
-    { key: 'target', title: '🎯 Target', subtitle: 'Оптимальный выбор', unis: target, badgeClass: 'badge-target' },
-    { key: 'safety', title: '🛡️ Safety', subtitle: 'Надёжный вариант', unis: safety, badgeClass: 'badge-safety' },
+  const tiers = [
+    { key: 'dream', title: '🌟 Dream Вузы', subtitle: 'Максимальный престиж (конкурс выше)', list: dream, badgeClass: 'badge-dream' },
+    { key: 'target', title: '🎯 Target Вузы', subtitle: 'Оптимальное попадание под твой профиль', list: target, badgeClass: 'badge-target' },
+    { key: 'safety', title: '🛡️ Safety Вузы', subtitle: 'Надежная подушка безопасности с грантами', list: safety, badgeClass: 'badge-safety' },
   ];
 
   return (
-    <div className="max-w-5xl mx-auto space-y-10 pb-24">
+    <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 space-y-10 animate-fade-in pb-28">
+      {/* Header */}
       <div className="text-center space-y-2">
-        <h2 className="text-heading-md">Подобранные вузы</h2>
-        <p className="text-body text-text-secondary">Найдено {total} вариантов по вашему профилю</p>
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-light text-primary text-xs font-bold uppercase tracking-wider">
+          🏛️ Каталог рекомендаций
+        </div>
+        <h2 className="text-3xl font-extrabold text-ink">
+          Университеты, подобранные для тебя
+        </h2>
+        <p className="text-sm text-ink-muted max-w-xl mx-auto">
+          Найдено {total} вариантов. Выберите до 8 вузов для детального сравнения критериев.
+        </p>
       </div>
 
-      {tierSections.map(({ key, title, subtitle, unis, badgeClass }) =>
-        unis.length > 0 ? (
+      {/* Tiers Sections */}
+      {tiers.map(({ key, title, subtitle, list, badgeClass }) =>
+        list.length > 0 ? (
           <section key={key} className="space-y-4">
-            <div className="flex items-center gap-3">
-              <h3 className="text-heading-sm">{title}</h3>
-              <span className={`${badgeClass} text-caption uppercase tracking-wider`}>{subtitle}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-surface-border pb-2">
+              <div className="flex items-center gap-3">
+                <h3 className="text-xl font-bold text-ink">{title}</h3>
+                <span className={badgeClass}>{list.length} вузов</span>
+              </div>
+              <span className="text-xs text-ink-muted">{subtitle}</span>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {unis.map((uni) => (
+              {list.map((uni) => (
                 <UniCard
                   key={uni.id}
                   uni={uni}
@@ -189,19 +234,29 @@ export default function Step4Recommendations({
         ) : null
       )}
 
-      <div className="flex justify-between pt-6">
-        <Button onClick={onBack} variant="secondary">Назад</Button>
-      </div>
+      {/* Floating Bottom Compare Action Bar */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-surface-border shadow-card z-40">
+        <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
+          <button
+            onClick={onBack}
+            className="btn-secondary text-xs py-3 px-5 hidden sm:block"
+          >
+            ← Назад к диагностике
+          </button>
 
-      {/* Floating bottom bar */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-bg-surface/95 glass border-t border-bg-border shadow-lg flex justify-center z-50">
-        <Button
-          onClick={onNext}
-          disabled={selectedForComparison.length < 2}
-          className="w-full max-w-md"
-        >
-          Сравнить выбранные ({selectedForComparison.length})
-        </Button>
+          <div className="flex items-center gap-2 text-xs text-ink-secondary">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+            <span>Выбрано: <strong>{selectedForComparison.length}</strong> из 8 возможных</span>
+          </div>
+
+          <button
+            onClick={onNext}
+            disabled={selectedForComparison.length < 2}
+            className="btn-primary text-sm py-3.5 px-8 flex-1 sm:flex-initial"
+          >
+            Сравнить выбранные ({selectedForComparison.length}) →
+          </button>
+        </div>
       </div>
     </div>
   );
