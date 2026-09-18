@@ -157,9 +157,9 @@ export function recommendUniversities(profile: Partial<Profile>, diagnosis: Diag
   });
 
   // ── 5. Split into tiers and sort ──
-  const dream = scored.filter(u => u.tier === 'dream').sort((a, b) => b.matchScore - a.matchScore).slice(0, 4);
-  const target = scored.filter(u => u.tier === 'target').sort((a, b) => b.matchScore - a.matchScore).slice(0, 4);
-  const safety = scored.filter(u => u.tier === 'safety').sort((a, b) => b.matchScore - a.matchScore).slice(0, 4);
+  const dream = scored.filter(u => u.tier === 'dream').sort((a, b) => b.matchScore - a.matchScore).slice(0, 10);
+  const target = scored.filter(u => u.tier === 'target').sort((a, b) => b.matchScore - a.matchScore).slice(0, 10);
+  const safety = scored.filter(u => u.tier === 'safety').sort((a, b) => b.matchScore - a.matchScore).slice(0, 10);
 
   return { dream, target, safety };
 }

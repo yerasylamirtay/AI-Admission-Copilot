@@ -6,30 +6,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 9,
-    "acceptanceRate": 0.15,
+    "tuition": 183,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.6,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 121,
-    "tuition": 183,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 35250,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "IT-менеджмент",
       "Machine Engineering",
       "Business Administration",
       "Экономика",
       "Маркетинг"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.15,
+    "ranking": 9,
+    "housing": {
+      "available": true,
+      "costPerMonth": 35250,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-2",
@@ -38,30 +36,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 3,
-    "acceptanceRate": 0.23,
+    "tuition": 30,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 120,
-    "tuition": 30,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 23073,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Кибербезопасность",
       "Computer Science",
       "Machine Engineering",
       "Электротехника",
       "Robotics"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.23,
+    "ranking": 3,
+    "housing": {
+      "available": true,
+      "costPerMonth": 23073,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-3",
@@ -70,30 +66,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 9,
-    "acceptanceRate": 0.3,
+    "tuition": 3155,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.6,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 112,
-    "tuition": 3155,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 20938,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международный бизнес",
       "Маркетинг",
       "Педагогика",
       "Business Administration",
       "Менеджмент"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.3,
+    "ranking": 9,
+    "housing": {
+      "available": true,
+      "costPerMonth": 20938,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-4",
@@ -102,30 +96,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 7,
-    "acceptanceRate": 0.26,
+    "tuition": 2725,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.5,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 125,
-    "tuition": 2725,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 34802,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Общественное здравоохранение",
       "Фармация",
       "Стоматология",
       "Юриспруденция",
       "IT-менеджмент"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.26,
+    "ranking": 7,
+    "housing": {
+      "available": true,
+      "costPerMonth": 34802,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-5",
@@ -134,30 +126,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 54,
-    "acceptanceRate": 0.44,
+    "tuition": 612,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 96,
-    "tuition": 612,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 15332,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Лингвистика",
       "Журналистика",
       "Computer Science",
       "Электротехника",
       "Психология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.44,
+    "ranking": 54,
+    "housing": {
+      "available": true,
+      "costPerMonth": 15332,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-6",
@@ -166,30 +156,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 8,
-    "acceptanceRate": 0.19,
+    "tuition": 2262,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 123,
-    "tuition": 2262,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 35588,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "IT-менеджмент",
       "Кибербезопасность",
       "Computer Science",
       "Data Science",
       "Robotics"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.19,
+    "ranking": 8,
+    "housing": {
+      "available": true,
+      "costPerMonth": 35588,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-7",
@@ -198,30 +186,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 29,
-    "acceptanceRate": 0.45,
+    "tuition": 1010,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 99,
-    "tuition": 1010,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 25460,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "IT-менеджмент",
       "Computer Science",
       "Software Engineering",
       "Robotics",
       "Кибербезопасность"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.45,
+    "ranking": 29,
+    "housing": {
+      "available": true,
+      "costPerMonth": 25460,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-8",
@@ -230,30 +216,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 24,
-    "acceptanceRate": 0.41,
+    "tuition": 1622,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 101,
-    "tuition": 1622,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 19311,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Business Administration",
       "Экономика",
       "Финансы",
       "Маркетинг",
       "Международный бизнес"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.41,
+    "ranking": 24,
+    "housing": {
+      "available": true,
+      "costPerMonth": 19311,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-9",
@@ -262,30 +246,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 34,
-    "acceptanceRate": 0.45,
+    "tuition": 1253,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 99,
-    "tuition": 1253,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 22224,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международный бизнес",
       "Финансы",
       "Менеджмент",
       "Журналистика",
       "Психология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.45,
+    "ranking": 34,
+    "housing": {
+      "available": true,
+      "costPerMonth": 22224,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-10",
@@ -294,30 +276,28 @@
     "address": "г. Каскелен, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 57,
-    "acceptanceRate": 0.43,
+    "tuition": 830,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 108,
-    "tuition": 830,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 18600,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Юриспруденция",
       "Кибербезопасность",
       "Лингвистика",
       "Международные отношения",
       "Data Science"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.43,
+    "ranking": 57,
+    "housing": {
+      "available": true,
+      "costPerMonth": 18600,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-11",
@@ -326,30 +306,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 19,
-    "acceptanceRate": 0.57,
+    "tuition": 1656,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 94,
-    "tuition": 1656,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 31115,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Менеджмент",
       "Журналистика",
       "Лингвистика",
       "Business Administration",
       "Педагогика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.57,
+    "ranking": 19,
+    "housing": {
+      "available": true,
+      "costPerMonth": 31115,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-12",
@@ -358,30 +336,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 14,
-    "acceptanceRate": 0.26,
+    "tuition": 1242,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.6,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 120,
-    "tuition": 1242,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 37388,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Сестринское дело",
       "Общая медицина",
       "Стоматология",
       "Общественное здравоохранение",
       "Фармация"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.26,
+    "ranking": 14,
+    "housing": {
+      "available": true,
+      "costPerMonth": 37388,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-13",
@@ -390,30 +366,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 13,
-    "acceptanceRate": 0.21,
+    "tuition": 345,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.6,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 111,
-    "tuition": 345,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 24189,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Сестринское дело",
       "Общая медицина",
       "Общественное здравоохранение",
       "Стоматология",
       "Фармация"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.21,
+    "ranking": 13,
+    "housing": {
+      "available": true,
+      "costPerMonth": 24189,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-14",
@@ -422,30 +396,28 @@
     "address": "г. Семей, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 50,
-    "acceptanceRate": 0.5,
+    "tuition": 147,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 96,
-    "tuition": 147,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 30510,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Сестринское дело",
       "Стоматология",
       "Общественное здравоохранение",
       "Общая медицина",
       "Фармация"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.5,
+    "ranking": 50,
+    "housing": {
+      "available": true,
+      "costPerMonth": 30510,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-15",
@@ -454,30 +426,28 @@
     "address": "г. Актобе, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 28,
-    "acceptanceRate": 0.43,
+    "tuition": 1009,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 95,
-    "tuition": 1009,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 25173,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Фармация",
       "Сестринское дело",
       "Общественное здравоохранение",
       "Общая медицина",
       "Стоматология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.43,
+    "ranking": 28,
+    "housing": {
+      "available": true,
+      "costPerMonth": 25173,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-16",
@@ -486,30 +456,28 @@
     "address": "г. Караганда, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 53,
-    "acceptanceRate": 0.47,
+    "tuition": 1201,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 93,
-    "tuition": 1201,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 34033,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Общая медицина",
       "Сестринское дело",
       "Фармация",
       "Стоматология",
       "Общественное здравоохранение"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.47,
+    "ranking": 53,
+    "housing": {
+      "available": true,
+      "costPerMonth": 34033,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-17",
@@ -518,30 +486,28 @@
     "address": "г. Шымкент, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 31,
-    "acceptanceRate": 0.58,
+    "tuition": 327,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 94,
-    "tuition": 327,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 21887,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Общая медицина",
       "Стоматология",
       "Общественное здравоохранение",
       "Сестринское дело",
       "Фармация"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.58,
+    "ranking": 31,
+    "housing": {
+      "available": true,
+      "costPerMonth": 21887,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-18",
@@ -550,30 +516,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 4,
-    "acceptanceRate": 0.2,
+    "tuition": 3375,
+    "scholarships": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
     "gpaReq": 3.6,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 127,
-    "tuition": 3375,
-    "currency": "USD",
-    "grants": "Гос. образовательный грант доступен (конкурс на грант), платное от $2500",
-    "housing": {
-      "available": true,
-      "costPerMonth": 30436,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Химическая инженерия",
       "Гражданское строительство",
       "Robotics",
       "Machine Engineering",
       "Электротехника"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.2,
+    "ranking": 4,
+    "housing": {
+      "available": true,
+      "costPerMonth": 30436,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-19",
@@ -582,30 +546,28 @@
     "address": "г. Караганда, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 60,
-    "acceptanceRate": 0.57,
+    "tuition": 164,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.4,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 92,
-    "tuition": 164,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 38646,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Электротехника",
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Machine Engineering",
       "Химическая инженерия"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.57,
+    "ranking": 60,
+    "housing": {
+      "available": true,
+      "costPerMonth": 38646,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-20",
@@ -614,30 +576,28 @@
     "address": "г. Усть-Каменогорск, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 53,
-    "acceptanceRate": 0.52,
+    "tuition": 1635,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 109,
-    "tuition": 1635,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 30721,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Нефтегазовое дело",
       "Machine Engineering",
       "Гражданское строительство",
       "Электротехника",
       "Химическая инженерия"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.52,
+    "ranking": 53,
+    "housing": {
+      "available": true,
+      "costPerMonth": 30721,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-21",
@@ -646,30 +606,28 @@
     "address": "г. Павлодар, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 39,
-    "acceptanceRate": 0.53,
+    "tuition": 978,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 97,
-    "tuition": 978,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 35164,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Нефтегазовое дело",
       "Химическая инженерия",
       "Гражданское строительство",
       "Психология",
       "Журналистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.53,
+    "ranking": 39,
+    "housing": {
+      "available": true,
+      "costPerMonth": 35164,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-22",
@@ -678,30 +636,28 @@
     "address": "г. Костанай, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 43,
-    "acceptanceRate": 0.55,
+    "tuition": 962,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 103,
-    "tuition": 962,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 34116,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Machine Engineering",
       "Гражданское строительство",
       "Нефтегазовое дело",
       "Электротехника",
       "Экология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.55,
+    "ranking": 43,
+    "housing": {
+      "available": true,
+      "costPerMonth": 34116,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-23",
@@ -710,30 +666,28 @@
     "address": "г. Атырау, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 37,
-    "acceptanceRate": 0.35,
+    "tuition": 2258,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 92,
-    "tuition": 2258,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 18136,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Электротехника",
       "Гражданское строительство",
       "Machine Engineering",
       "Химическая инженерия",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.35,
+    "ranking": 37,
+    "housing": {
+      "available": true,
+      "costPerMonth": 18136,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-24",
@@ -742,30 +696,28 @@
     "address": "г. Уральск, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 49,
-    "acceptanceRate": 0.44,
+    "tuition": 1684,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 103,
-    "tuition": 1684,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 18637,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Электротехника",
       "Гражданское строительство",
       "Землеустройство",
       "Экология",
       "Machine Engineering"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.44,
+    "ranking": 49,
+    "housing": {
+      "available": true,
+      "costPerMonth": 18637,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-25",
@@ -774,30 +726,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 22,
-    "acceptanceRate": 0.41,
+    "tuition": 1830,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 104,
-    "tuition": 1830,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 17985,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международные отношения",
       "Журналистика",
       "Лингвистика",
       "Педагогика",
       "Психология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.41,
+    "ranking": 22,
+    "housing": {
+      "available": true,
+      "costPerMonth": 17985,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-26",
@@ -806,30 +756,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 57,
-    "acceptanceRate": 0.54,
+    "tuition": 558,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.4,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 106,
-    "tuition": 558,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 19051,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Лингвистика",
       "Педагогика",
       "Психология",
       "Юриспруденция",
       "Журналистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.54,
+    "ranking": 57,
+    "housing": {
+      "available": true,
+      "costPerMonth": 19051,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-27",
@@ -838,30 +786,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 43,
-    "acceptanceRate": 0.59,
+    "tuition": 2294,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 91,
-    "tuition": 2294,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 26382,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Маркетинг",
       "Финансы",
       "Гражданское строительство",
       "Менеджмент",
       "Химическая инженерия"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.59,
+    "ranking": 43,
+    "housing": {
+      "available": true,
+      "costPerMonth": 26382,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-28",
@@ -870,30 +816,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 39,
-    "acceptanceRate": 0.6,
+    "tuition": 1431,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 100,
-    "tuition": 1431,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 33207,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Менеджмент",
       "Международный бизнес",
       "Экономика",
       "Маркетинг",
       "Финансы"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.6,
+    "ranking": 39,
+    "housing": {
+      "available": true,
+      "costPerMonth": 33207,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-29",
@@ -902,30 +846,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 53,
-    "acceptanceRate": 0.49,
+    "tuition": 2446,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.2,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 110,
-    "tuition": 2446,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 18972,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Химическая инженерия",
       "Электротехника",
       "Machine Engineering"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.49,
+    "ranking": 53,
+    "housing": {
+      "available": true,
+      "costPerMonth": 18972,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-30",
@@ -934,29 +876,27 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 45,
-    "acceptanceRate": 0.38,
+    "tuition": 1561,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 102,
-    "tuition": 1561,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 22615,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Экология",
       "Землеустройство",
       "Ветеринария",
       "Агрономия"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.38,
+    "ranking": 45,
+    "housing": {
+      "available": true,
+      "costPerMonth": 22615,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-31",
@@ -965,30 +905,28 @@
     "address": "г. Шымкент, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 60,
-    "acceptanceRate": 0.39,
+    "tuition": 534,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 103,
-    "tuition": 534,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 24185,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Юриспруденция",
       "Журналистика",
       "Гражданское строительство",
       "Электротехника",
       "Педагогика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.39,
+    "ranking": 60,
+    "housing": {
+      "available": true,
+      "costPerMonth": 24185,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-32",
@@ -997,30 +935,28 @@
     "address": "г. Талдыкорган, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 68,
-    "acceptanceRate": 0.71,
+    "tuition": 588,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 73,
-    "tuition": 588,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 39039,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Юриспруденция",
       "Лингвистика",
       "Экология",
       "Землеустройство",
       "Педагогика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.71,
+    "ranking": 68,
+    "housing": {
+      "available": true,
+      "costPerMonth": 39039,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-33",
@@ -1029,30 +965,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 119,
-    "acceptanceRate": 0.62,
+    "tuition": 381,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.9,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 79,
-    "tuition": 381,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 27625,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Педагогика",
       "Психология",
       "Юриспруденция",
       "Лингвистика",
       "Журналистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.62,
+    "ranking": 119,
+    "housing": {
+      "available": true,
+      "costPerMonth": 27625,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-34",
@@ -1061,30 +995,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 53,
-    "acceptanceRate": 0.41,
+    "tuition": 389,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 91,
-    "tuition": 389,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 20694,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международные отношения",
       "Лингвистика",
       "Журналистика",
       "Педагогика",
       "Юриспруденция"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.41,
+    "ranking": 53,
+    "housing": {
+      "available": true,
+      "costPerMonth": 20694,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-35",
@@ -1093,30 +1025,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 76,
-    "acceptanceRate": 0.63,
+    "tuition": 897,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 88,
-    "tuition": 897,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 25656,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международные отношения",
       "Журналистика",
       "Психология",
       "Юриспруденция",
       "Педагогика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.63,
+    "ranking": 76,
+    "housing": {
+      "available": true,
+      "costPerMonth": 25656,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-36",
@@ -1125,30 +1055,28 @@
     "address": "г. Шымкент, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 80,
-    "acceptanceRate": 0.75,
+    "tuition": 216,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 73,
-    "tuition": 216,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 15929,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Юриспруденция",
       "Общая медицина",
       "Международные отношения",
       "Стоматология",
       "Общественное здравоохранение"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.75,
+    "ranking": 80,
+    "housing": {
+      "available": true,
+      "costPerMonth": 15929,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-37",
@@ -1157,30 +1085,28 @@
     "address": "г. Кокшетау, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 117,
-    "acceptanceRate": 0.59,
+    "tuition": 96,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 81,
-    "tuition": 96,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 36789,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Гражданское строительство",
       "Нефтегазовое дело",
       "Электротехника",
       "Юриспруденция",
       "Лингвистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.59,
+    "ranking": 117,
+    "housing": {
+      "available": true,
+      "costPerMonth": 36789,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-38",
@@ -1189,30 +1115,28 @@
     "address": "г. Тараз, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 115,
-    "acceptanceRate": 0.81,
+    "tuition": 784,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.7,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 90,
-    "tuition": 784,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 38675,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Machine Engineering",
       "Журналистика",
       "Юриспруденция",
       "Химическая инженерия",
       "Международные отношения"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.81,
+    "ranking": 115,
+    "housing": {
+      "available": true,
+      "costPerMonth": 38675,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-39",
@@ -1221,30 +1145,28 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 110,
-    "acceptanceRate": 0.8,
+    "tuition": 246,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 79,
-    "tuition": 246,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 29645,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Менеджмент",
       "Маркетинг",
       "Финансы",
       "Business Administration",
       "Международный бизнес"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.8,
+    "ranking": 110,
+    "housing": {
+      "available": true,
+      "costPerMonth": 29645,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-40",
@@ -1253,30 +1175,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 47,
-    "acceptanceRate": 0.5,
+    "tuition": 1744,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 94,
-    "tuition": 1744,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 33042,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Data Science",
       "Software Engineering",
       "Computer Science",
       "Robotics",
       "Химическая инженерия"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.5,
+    "ranking": 47,
+    "housing": {
+      "available": true,
+      "costPerMonth": 33042,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-41",
@@ -1285,30 +1205,28 @@
     "address": "г. Петропавловск, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 122,
-    "acceptanceRate": 0.79,
+    "tuition": 281,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.9,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 77,
-    "tuition": 281,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 20677,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международные отношения",
       "Гражданское строительство",
       "Журналистика",
       "Machine Engineering",
       "Лингвистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.79,
+    "ranking": 122,
+    "housing": {
+      "available": true,
+      "costPerMonth": 20677,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-42",
@@ -1317,30 +1235,28 @@
     "address": "г. Жезказган, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 114,
-    "acceptanceRate": 0.68,
+    "tuition": 431,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.8,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 85,
-    "tuition": 431,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 29372,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Химическая инженерия",
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Machine Engineering",
       "Электротехника"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.68,
+    "ranking": 114,
+    "housing": {
+      "available": true,
+      "costPerMonth": 29372,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-43",
@@ -1349,30 +1265,28 @@
     "address": "г. Актобе, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 113,
-    "acceptanceRate": 0.73,
+    "tuition": 793,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.7,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 74,
-    "tuition": 793,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 32741,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Юриспруденция",
       "Экономика",
       "Международный бизнес",
       "Менеджмент",
       "Психология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.73,
+    "ranking": 113,
+    "housing": {
+      "available": true,
+      "costPerMonth": 32741,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-44",
@@ -1381,30 +1295,28 @@
     "address": "г. Караганда, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 114,
-    "acceptanceRate": 0.82,
+    "tuition": 1106,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.9,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 87,
-    "tuition": 1106,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 18226,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Международные отношения",
       "Журналистика",
       "Юриспруденция",
       "Психология",
       "Финансы"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.82,
+    "ranking": 114,
+    "housing": {
+      "available": true,
+      "costPerMonth": 18226,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-45",
@@ -1413,30 +1325,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 25,
-    "acceptanceRate": 0.56,
+    "tuition": 583,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 96,
-    "tuition": 583,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 17710,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Изобразительное искусство",
       "Музыка",
       "Machine Engineering",
       "Химическая инженерия",
       "Архитектура"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.56,
+    "ranking": 25,
+    "housing": {
+      "available": true,
+      "costPerMonth": 17710,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-46",
@@ -1445,29 +1355,27 @@
     "address": "г. Астана, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 38,
-    "acceptanceRate": 0.49,
+    "tuition": 958,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 100,
-    "tuition": 958,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 31347,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Землеустройство",
       "Агрономия",
       "Ветеринария",
       "Экология"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.49,
+    "ranking": 38,
+    "housing": {
+      "available": true,
+      "costPerMonth": 31347,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-47",
@@ -1476,29 +1384,27 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 82,
-    "acceptanceRate": 0.84,
+    "tuition": 499,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 2.7,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 72,
-    "tuition": 499,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 19133,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Изобразительное искусство",
       "Архитектура",
       "Музыка",
       "Дизайн"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.84,
+    "ranking": 82,
+    "housing": {
+      "available": true,
+      "costPerMonth": 19133,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-48",
@@ -1507,30 +1413,28 @@
     "address": "г. Алматы, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 41,
-    "acceptanceRate": 0.51,
+    "tuition": 322,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.1,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 109,
-    "tuition": 322,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 35603,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Маркетинг",
       "Финансы",
       "Международный бизнес",
       "Business Administration",
       "Экономика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.51,
+    "ranking": 41,
+    "housing": {
+      "available": true,
+      "costPerMonth": 35603,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-49",
@@ -1539,30 +1443,28 @@
     "address": "г. Усть-Каменогорск, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 119,
-    "acceptanceRate": 0.57,
+    "tuition": 470,
+    "scholarships": "Гос. грант доступен, региональные квоты",
     "gpaReq": 3,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 76,
-    "tuition": 470,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, региональные квоты",
-    "housing": {
-      "available": true,
-      "costPerMonth": 26987,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Экономика",
       "Business Administration",
       "Международные отношения",
       "Психология",
       "Маркетинг"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.57,
+    "ranking": 119,
+    "housing": {
+      "available": true,
+      "costPerMonth": 26987,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "kazakhstan-50",
@@ -1571,30 +1473,28 @@
     "address": "г. Караганда, Казахстан",
     "country": "Kazakhstan",
     "region": "kazakhstan",
-    "ranking": 23,
-    "acceptanceRate": 0.47,
+    "tuition": 1200,
+    "scholarships": "Гос. грант доступен, скидки для отличников до 30%",
     "gpaReq": 3.4,
     "ieltsReq": null,
     "satReq": null,
     "entReq": 92,
-    "tuition": 1200,
-    "currency": "USD",
-    "grants": "Гос. грант доступен, скидки для отличников до 30%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 16456,
-      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
-    },
-    "directions": [
+    "deadline": "2027-07-15",
+    "programs": [
       "Лингвистика",
       "Нефтегазовое дело",
       "Химическая инженерия",
       "Электротехника",
       "Журналистика"
     ],
-    "deadline": "2027-07-15",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.47,
+    "ranking": 23,
+    "housing": {
+      "available": true,
+      "costPerMonth": 16456,
+      "description": "Общежитие вуза, лимитированные места, приоритет — грантникам и иногородним"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-51",
@@ -1603,30 +1503,28 @@
     "address": "Cambridge, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 3,
-    "acceptanceRate": 0.12,
+    "tuition": 39712,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.77,
     "ieltsReq": 7.1,
     "satReq": 1457,
     "entReq": null,
-    "tuition": 39712,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1198,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Machine Engineering",
       "Software Engineering",
       "Нефтегазовое дело",
       "Computer Science",
       "Robotics"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.12,
+    "ranking": 3,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1198,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-52",
@@ -1635,30 +1533,28 @@
     "address": "Stanford, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 34,
-    "acceptanceRate": 0.12,
+    "tuition": 34760,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.94,
     "ieltsReq": 7.4,
     "satReq": 1513,
     "entReq": null,
-    "tuition": 34760,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 499,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Data Science",
       "Robotics",
       "IT-менеджмент",
       "Software Engineering",
       "Business Administration"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.12,
+    "ranking": 34,
+    "housing": {
+      "available": true,
+      "costPerMonth": 499,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-53",
@@ -1667,30 +1563,28 @@
     "address": "Cambridge, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 28,
-    "acceptanceRate": 0.12,
+    "tuition": 43703,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.78,
     "ieltsReq": 7.5,
     "satReq": 1537,
     "entReq": null,
-    "tuition": 43703,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 705,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Журналистика",
       "Юриспруденция",
       "Лингвистика",
       "Менеджмент",
       "Международные отношения"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.12,
+    "ranking": 28,
+    "housing": {
+      "available": true,
+      "costPerMonth": 705,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-54",
@@ -1699,30 +1593,28 @@
     "address": "Berkeley, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 4,
-    "acceptanceRate": 0.16,
+    "tuition": 44984,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.77,
     "ieltsReq": 7.1,
     "satReq": 1451,
     "entReq": null,
-    "tuition": 44984,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1108,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Machine Engineering",
       "Robotics",
       "Computer Science",
       "Гражданское строительство",
       "Кибербезопасность"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.16,
+    "ranking": 4,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1108,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-55",
@@ -1731,30 +1623,28 @@
     "address": "Los Angeles, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 24,
-    "acceptanceRate": 0.15,
+    "tuition": 26699,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.79,
     "ieltsReq": 7.1,
     "satReq": 1516,
     "entReq": null,
-    "tuition": 26699,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 443,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Педагогика",
       "Финансы",
       "Маркетинг",
       "Лингвистика",
       "Менеджмент"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.15,
+    "ranking": 24,
+    "housing": {
+      "available": true,
+      "costPerMonth": 443,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-56",
@@ -1763,30 +1653,28 @@
     "address": "Ann Arbor, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 89,
-    "acceptanceRate": 0.35,
+    "tuition": 12093,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.65,
     "ieltsReq": 6.9,
     "satReq": 1280,
     "entReq": null,
-    "tuition": 12093,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1041,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Маркетинг",
       "Международный бизнес",
       "Machine Engineering",
       "Электротехника",
       "Гражданское строительство"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.35,
+    "ranking": 89,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1041,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-57",
@@ -1795,30 +1683,28 @@
     "address": "New York, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 50,
-    "acceptanceRate": 0.36,
+    "tuition": 14784,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.39,
     "ieltsReq": 6.6,
     "satReq": 1437,
     "entReq": null,
-    "tuition": 14784,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 512,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Business Administration",
       "Международные отношения",
       "Педагогика",
       "Экономика",
       "Журналистика"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.36,
+    "ranking": 50,
+    "housing": {
+      "available": true,
+      "costPerMonth": 512,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-58",
@@ -1827,30 +1713,28 @@
     "address": "Boston, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 51,
-    "acceptanceRate": 0.42,
+    "tuition": 14204,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.67,
     "ieltsReq": 6.9,
     "satReq": 1315,
     "entReq": null,
-    "tuition": 14204,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 436,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Педагогика",
       "Маркетинг",
       "Международные отношения",
       "Юриспруденция",
       "Психология"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.42,
+    "ranking": 51,
+    "housing": {
+      "available": true,
+      "costPerMonth": 436,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-59",
@@ -1859,30 +1743,28 @@
     "address": "West Lafayette, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 148,
-    "acceptanceRate": 0.27,
+    "tuition": 23182,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.6,
     "ieltsReq": 6.5,
     "satReq": 1263,
     "entReq": null,
-    "tuition": 23182,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 883,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Computer Science",
       "Гражданское строительство",
       "Software Engineering",
       "Data Science",
       "Machine Engineering"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.27,
+    "ranking": 148,
+    "housing": {
+      "available": true,
+      "costPerMonth": 883,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-60",
@@ -1891,30 +1773,28 @@
     "address": "Urbana, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 63,
-    "acceptanceRate": 0.25,
+    "tuition": 9097,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.35,
     "ieltsReq": 6.9,
     "satReq": 1450,
     "entReq": null,
-    "tuition": 9097,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 517,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Robotics",
       "IT-менеджмент",
       "Нефтегазовое дело",
       "Электротехника",
       "Machine Engineering"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.25,
+    "ranking": 63,
+    "housing": {
+      "available": true,
+      "costPerMonth": 517,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-61",
@@ -1923,30 +1803,28 @@
     "address": "Columbus, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 61,
-    "acceptanceRate": 0.22,
+    "tuition": 19223,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.69,
     "ieltsReq": 6.6,
     "satReq": 1304,
     "entReq": null,
-    "tuition": 19223,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 591,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Журналистика",
       "Юриспруденция",
       "Международный бизнес",
       "Маркетинг",
       "Экономика"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.22,
+    "ranking": 61,
+    "housing": {
+      "available": true,
+      "costPerMonth": 591,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-62",
@@ -1955,30 +1833,28 @@
     "address": "University Park, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 138,
-    "acceptanceRate": 0.25,
+    "tuition": 14320,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.44,
     "ieltsReq": 6.6,
     "satReq": 1429,
     "entReq": null,
-    "tuition": 14320,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 576,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Электротехника",
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Экономика",
       "Химическая инженерия"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.25,
+    "ranking": 138,
+    "housing": {
+      "available": true,
+      "costPerMonth": 576,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-63",
@@ -1987,30 +1863,28 @@
     "address": "Tempe, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 167,
-    "acceptanceRate": 0.56,
+    "tuition": 6272,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.37,
     "ieltsReq": 6.2,
     "satReq": 1140,
     "entReq": null,
-    "tuition": 6272,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1034,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Business Administration",
       "Robotics",
       "Кибербезопасность",
       "Финансы",
       "Computer Science"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.56,
+    "ranking": 167,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1034,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-64",
@@ -2019,30 +1893,28 @@
     "address": "Seattle, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 90,
-    "acceptanceRate": 0.38,
+    "tuition": 20780,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.57,
     "ieltsReq": 6.6,
     "satReq": 1347,
     "entReq": null,
-    "tuition": 20780,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1144,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "IT-менеджмент",
       "Robotics",
       "Гражданское строительство",
       "Электротехника",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.38,
+    "ranking": 90,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1144,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-65",
@@ -2051,30 +1923,28 @@
     "address": "Austin, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 76,
-    "acceptanceRate": 0.25,
+    "tuition": 23652,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.45,
     "ieltsReq": 6.7,
     "satReq": 1328,
     "entReq": null,
-    "tuition": 23652,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1194,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Computer Science",
       "Software Engineering",
       "Маркетинг",
       "Кибербезопасность",
       "Международный бизнес"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.25,
+    "ranking": 76,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1194,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-66",
@@ -2083,30 +1953,28 @@
     "address": "Atlanta, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 5,
-    "acceptanceRate": 0.06,
+    "tuition": 20977,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.95,
     "ieltsReq": 7.5,
     "satReq": 1473,
     "entReq": null,
-    "tuition": 20977,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 635,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Robotics",
       "Data Science",
       "Machine Engineering",
       "Кибербезопасность",
       "Software Engineering"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.06,
+    "ranking": 5,
+    "housing": {
+      "available": true,
+      "costPerMonth": 635,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-67",
@@ -2115,30 +1983,28 @@
     "address": "Pittsburgh, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 22,
-    "acceptanceRate": 0.1,
+    "tuition": 44404,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.92,
     "ieltsReq": 7.3,
     "satReq": 1475,
     "entReq": null,
-    "tuition": 44404,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1032,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Software Engineering",
       "Data Science",
       "Robotics",
       "Кибербезопасность",
       "Computer Science"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.1,
+    "ranking": 22,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1032,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "usa-68",
@@ -2147,30 +2013,28 @@
     "address": "Madison, USA",
     "country": "USA",
     "region": "usa",
-    "ranking": 85,
-    "acceptanceRate": 0.39,
+    "tuition": 21793,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.37,
     "ieltsReq": 6.7,
     "satReq": 1253,
     "entReq": null,
-    "tuition": 21793,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 758,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-01-05",
+    "programs": [
       "Нефтегазовое дело",
       "Журналистика",
       "Гражданское строительство",
       "Психология",
       "Международные отношения"
     ],
-    "deadline": "2027-01-05",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.39,
+    "ranking": 85,
+    "housing": {
+      "available": true,
+      "costPerMonth": 758,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-69",
@@ -2179,30 +2043,28 @@
     "address": "Zurich, Switzerland",
     "country": "Switzerland",
     "region": "europe",
-    "ranking": 29,
-    "acceptanceRate": 0.06,
+    "tuition": 47225,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.87,
     "ieltsReq": 7.5,
     "satReq": 1466,
     "entReq": null,
-    "tuition": 47225,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 484,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Machine Engineering",
       "Data Science",
       "Software Engineering",
       "Нефтегазовое дело",
       "Robotics"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.06,
+    "ranking": 29,
+    "housing": {
+      "available": true,
+      "costPerMonth": 484,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-70",
@@ -2211,30 +2073,28 @@
     "address": "Lausanne, Switzerland",
     "country": "Switzerland",
     "region": "europe",
-    "ranking": 5,
-    "acceptanceRate": 0.14,
+    "tuition": 35907,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.84,
     "ieltsReq": 7.2,
     "satReq": 1494,
     "entReq": null,
-    "tuition": 35907,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 939,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Нефтегазовое дело",
       "IT-менеджмент",
       "Robotics",
       "Software Engineering",
       "Computer Science"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.14,
+    "ranking": 5,
+    "housing": {
+      "available": true,
+      "costPerMonth": 939,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-71",
@@ -2243,30 +2103,28 @@
     "address": "Munich, Germany",
     "country": "Germany",
     "region": "europe",
-    "ranking": 21,
-    "acceptanceRate": 0.06,
+    "tuition": 19573,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.95,
     "ieltsReq": 7.2,
     "satReq": 1515,
     "entReq": null,
-    "tuition": 19573,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 403,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Нефтегазовое дело",
       "Гражданское строительство",
       "IT-менеджмент",
       "Химическая инженерия",
       "Machine Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.06,
+    "ranking": 21,
+    "housing": {
+      "available": true,
+      "costPerMonth": 403,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-72",
@@ -2275,30 +2133,28 @@
     "address": "Berlin, Germany",
     "country": "Germany",
     "region": "europe",
-    "ranking": 86,
-    "acceptanceRate": 0.27,
+    "tuition": 19308,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.42,
     "ieltsReq": 6.6,
     "satReq": 1299,
     "entReq": null,
-    "tuition": 19308,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 954,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Machine Engineering",
       "Электротехника",
       "Software Engineering",
       "Кибербезопасность",
       "Computer Science"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.27,
+    "ranking": 86,
+    "housing": {
+      "available": true,
+      "costPerMonth": 954,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-73",
@@ -2307,30 +2163,28 @@
     "address": "Aachen, Germany",
     "country": "Germany",
     "region": "europe",
-    "ranking": 146,
-    "acceptanceRate": 0.42,
+    "tuition": 12697,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.45,
     "ieltsReq": 6.7,
     "satReq": 1412,
     "entReq": null,
-    "tuition": 12697,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 759,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Химическая инженерия",
       "Электротехника",
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Machine Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.42,
+    "ranking": 146,
+    "housing": {
+      "available": true,
+      "costPerMonth": 759,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-74",
@@ -2339,30 +2193,28 @@
     "address": "Amsterdam, Netherlands",
     "country": "Netherlands",
     "region": "europe",
-    "ranking": 31,
-    "acceptanceRate": 0.04,
+    "tuition": 33256,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.94,
     "ieltsReq": 7.2,
     "satReq": 1480,
     "entReq": null,
-    "tuition": 33256,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1104,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Business Administration",
       "Журналистика",
       "Финансы",
       "Юриспруденция",
       "Международные отношения"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.04,
+    "ranking": 31,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1104,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-75",
@@ -2371,30 +2223,28 @@
     "address": "Delft, Netherlands",
     "country": "Netherlands",
     "region": "europe",
-    "ranking": 22,
-    "acceptanceRate": 0.1,
+    "tuition": 38490,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.73,
     "ieltsReq": 7.3,
     "satReq": 1487,
     "entReq": null,
-    "tuition": 38490,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 437,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Кибербезопасность",
       "Химическая инженерия",
       "Robotics",
       "IT-менеджмент",
       "Software Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.1,
+    "ranking": 22,
+    "housing": {
+      "available": true,
+      "costPerMonth": 437,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-76",
@@ -2403,30 +2253,28 @@
     "address": "Utrecht, Netherlands",
     "country": "Netherlands",
     "region": "europe",
-    "ranking": 55,
-    "acceptanceRate": 0.42,
+    "tuition": 8198,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.65,
     "ieltsReq": 6.9,
     "satReq": 1395,
     "entReq": null,
-    "tuition": 8198,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 498,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Педагогика",
       "Стоматология",
       "Журналистика",
       "Лингвистика",
       "Международные отношения"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.42,
+    "ranking": 55,
+    "housing": {
+      "available": true,
+      "costPerMonth": 498,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-77",
@@ -2435,30 +2283,28 @@
     "address": "Stockholm, Sweden",
     "country": "Sweden",
     "region": "europe",
-    "ranking": 46,
-    "acceptanceRate": 0.25,
+    "tuition": 22413,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.41,
     "ieltsReq": 7,
     "satReq": 1257,
     "entReq": null,
-    "tuition": 22413,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1103,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Электротехника",
       "Computer Science",
       "Нефтегазовое дело",
       "Software Engineering",
       "Data Science"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.25,
+    "ranking": 46,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1103,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-78",
@@ -2467,30 +2313,28 @@
     "address": "Uppsala, Sweden",
     "country": "Sweden",
     "region": "europe",
-    "ranking": 144,
-    "acceptanceRate": 0.31,
+    "tuition": 18723,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.65,
     "ieltsReq": 6.6,
     "satReq": 1288,
     "entReq": null,
-    "tuition": 18723,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 816,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Лингвистика",
       "Педагогика",
       "Стоматология",
       "Психология",
       "Общая медицина"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.31,
+    "ranking": 144,
+    "housing": {
+      "available": true,
+      "costPerMonth": 816,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-79",
@@ -2499,30 +2343,28 @@
     "address": "Lund, Sweden",
     "country": "Sweden",
     "region": "europe",
-    "ranking": 57,
-    "acceptanceRate": 0.34,
+    "tuition": 24259,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.33,
     "ieltsReq": 6.9,
     "satReq": 1320,
     "entReq": null,
-    "tuition": 24259,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 988,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Менеджмент",
       "Финансы",
       "Электротехника",
       "Нефтегазовое дело",
       "Гражданское строительство"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.34,
+    "ranking": 57,
+    "housing": {
+      "available": true,
+      "costPerMonth": 988,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-80",
@@ -2531,30 +2373,28 @@
     "address": "Warsaw, Poland",
     "country": "Poland",
     "region": "europe",
-    "ranking": 185,
-    "acceptanceRate": 0.59,
+    "tuition": 9883,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.1,
     "ieltsReq": 6.4,
     "satReq": 1214,
     "entReq": null,
-    "tuition": 9883,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1117,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Маркетинг",
       "Менеджмент",
       "Юриспруденция",
       "Психология",
       "Журналистика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.59,
+    "ranking": 185,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1117,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-81",
@@ -2563,30 +2403,28 @@
     "address": "Krakow, Poland",
     "country": "Poland",
     "region": "europe",
-    "ranking": 263,
-    "acceptanceRate": 0.56,
+    "tuition": 7331,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.18,
     "ieltsReq": 6.5,
     "satReq": 1110,
     "entReq": null,
-    "tuition": 7331,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1172,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Гражданское строительство",
       "Кибербезопасность",
       "Software Engineering",
       "Machine Engineering",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.56,
+    "ranking": 263,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1172,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-82",
@@ -2595,30 +2433,28 @@
     "address": "Warsaw, Poland",
     "country": "Poland",
     "region": "europe",
-    "ranking": 224,
-    "acceptanceRate": 0.55,
+    "tuition": 5364,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.31,
     "ieltsReq": 6.1,
     "satReq": 1235,
     "entReq": null,
-    "tuition": 5364,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1085,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Machine Engineering",
       "Нефтегазовое дело",
       "Гражданское строительство",
       "Электротехника",
       "Химическая инженерия"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.55,
+    "ranking": 224,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1085,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-83",
@@ -2627,30 +2463,28 @@
     "address": "Prague, Czech Republic",
     "country": "Czech Republic",
     "region": "europe",
-    "ranking": 91,
-    "acceptanceRate": 0.38,
+    "tuition": 20629,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.41,
     "ieltsReq": 6.6,
     "satReq": 1387,
     "entReq": null,
-    "tuition": 20629,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 504,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Стоматология",
       "Международные отношения",
       "Психология",
       "Журналистика",
       "Педагогика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.38,
+    "ranking": 91,
+    "housing": {
+      "available": true,
+      "costPerMonth": 504,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-84",
@@ -2659,30 +2493,28 @@
     "address": "Prague, Czech Republic",
     "country": "Czech Republic",
     "region": "europe",
-    "ranking": 383,
-    "acceptanceRate": 0.49,
+    "tuition": 8975,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.29,
     "ieltsReq": 6,
     "satReq": 1147,
     "entReq": null,
-    "tuition": 8975,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 925,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Robotics",
       "Электротехника",
       "Software Engineering",
       "IT-менеджмент",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.49,
+    "ranking": 383,
+    "housing": {
+      "available": true,
+      "costPerMonth": 925,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-85",
@@ -2691,30 +2523,28 @@
     "address": "Tartu, Estonia",
     "country": "Estonia",
     "region": "europe",
-    "ranking": 188,
-    "acceptanceRate": 0.69,
+    "tuition": 5338,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.39,
     "ieltsReq": 6.4,
     "satReq": 1246,
     "entReq": null,
-    "tuition": 5338,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 712,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Software Engineering",
       "IT-менеджмент",
       "Robotics",
       "Педагогика",
       "Юриспруденция"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.69,
+    "ranking": 188,
+    "housing": {
+      "available": true,
+      "costPerMonth": 712,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-86",
@@ -2723,30 +2553,28 @@
     "address": "Tallinn, Estonia",
     "country": "Estonia",
     "region": "europe",
-    "ranking": 313,
-    "acceptanceRate": 0.52,
+    "tuition": 6804,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.07,
     "ieltsReq": 6.4,
     "satReq": 1233,
     "entReq": null,
-    "tuition": 6804,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 654,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Химическая инженерия",
       "Электротехника",
       "Кибербезопасность",
       "IT-менеджмент",
       "Robotics"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.52,
+    "ranking": 313,
+    "housing": {
+      "available": true,
+      "costPerMonth": 654,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-87",
@@ -2755,30 +2583,28 @@
     "address": "Vilnius, Lithuania",
     "country": "Lithuania",
     "region": "europe",
-    "ranking": 352,
-    "acceptanceRate": 0.64,
+    "tuition": 2946,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.26,
     "ieltsReq": 6.3,
     "satReq": 1198,
     "entReq": null,
-    "tuition": 2946,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 980,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Лингвистика",
       "Педагогика",
       "Финансы",
       "Маркетинг",
       "Психология"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.64,
+    "ranking": 352,
+    "housing": {
+      "available": true,
+      "costPerMonth": 980,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-88",
@@ -2787,30 +2613,28 @@
     "address": "Vienna, Austria",
     "country": "Austria",
     "region": "europe",
-    "ranking": 136,
-    "acceptanceRate": 0.24,
+    "tuition": 15269,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.35,
     "ieltsReq": 6.9,
     "satReq": 1257,
     "entReq": null,
-    "tuition": 15269,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 552,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Педагогика",
       "Журналистика",
       "Business Administration",
       "Маркетинг",
       "Лингвистика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.24,
+    "ranking": 136,
+    "housing": {
+      "available": true,
+      "costPerMonth": 552,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-89",
@@ -2819,30 +2643,28 @@
     "address": "Vienna, Austria",
     "country": "Austria",
     "region": "europe",
-    "ranking": 55,
-    "acceptanceRate": 0.22,
+    "tuition": 14391,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.43,
     "ieltsReq": 6.8,
     "satReq": 1358,
     "entReq": null,
-    "tuition": 14391,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 592,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Computer Science",
       "Machine Engineering",
       "Кибербезопасность",
       "Гражданское строительство",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.22,
+    "ranking": 55,
+    "housing": {
+      "available": true,
+      "costPerMonth": 592,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-90",
@@ -2851,30 +2673,28 @@
     "address": "Milan, Italy",
     "country": "Italy",
     "region": "europe",
-    "ranking": 20,
-    "acceptanceRate": 0.13,
+    "tuition": 23757,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.74,
     "ieltsReq": 7,
     "satReq": 1487,
     "entReq": null,
-    "tuition": 23757,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 893,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Нефтегазовое дело",
       "Электротехника",
       "Дизайн",
       "Гражданское строительство",
       "Архитектура"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.13,
+    "ranking": 20,
+    "housing": {
+      "available": true,
+      "costPerMonth": 893,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-91",
@@ -2883,30 +2703,28 @@
     "address": "Bologna, Italy",
     "country": "Italy",
     "region": "europe",
-    "ranking": 116,
-    "acceptanceRate": 0.33,
+    "tuition": 14686,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.45,
     "ieltsReq": 6.5,
     "satReq": 1317,
     "entReq": null,
-    "tuition": 14686,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 470,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международные отношения",
       "Журналистика",
       "Международный бизнес",
       "Экономика",
       "Педагогика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.33,
+    "ranking": 116,
+    "housing": {
+      "available": true,
+      "costPerMonth": 470,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-92",
@@ -2915,30 +2733,28 @@
     "address": "Paris, France",
     "country": "France",
     "region": "europe",
-    "ranking": 20,
-    "acceptanceRate": 0.11,
+    "tuition": 51540,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.94,
     "ieltsReq": 7.5,
     "satReq": 1471,
     "entReq": null,
-    "tuition": 51540,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 410,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Стоматология",
       "Психология",
       "Фармация",
       "Международные отношения",
       "Педагогика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.11,
+    "ranking": 20,
+    "housing": {
+      "available": true,
+      "costPerMonth": 410,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-93",
@@ -2947,30 +2763,28 @@
     "address": "Paris, France",
     "country": "France",
     "region": "europe",
-    "ranking": 36,
-    "acceptanceRate": 0.11,
+    "tuition": 33205,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.84,
     "ieltsReq": 7.4,
     "satReq": 1528,
     "entReq": null,
-    "tuition": 33205,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 549,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международные отношения",
       "Экономика",
       "Журналистика",
       "Менеджмент",
       "Маркетинг"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.11,
+    "ranking": 36,
+    "housing": {
+      "available": true,
+      "costPerMonth": 549,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-94",
@@ -2979,30 +2793,28 @@
     "address": "Barcelona, Spain",
     "country": "Spain",
     "region": "europe",
-    "ranking": 115,
-    "acceptanceRate": 0.38,
+    "tuition": 18713,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.33,
     "ieltsReq": 7,
     "satReq": 1274,
     "entReq": null,
-    "tuition": 18713,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 625,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международный бизнес",
       "Экономика",
       "Финансы",
       "Международные отношения",
       "Business Administration"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.38,
+    "ranking": 115,
+    "housing": {
+      "available": true,
+      "costPerMonth": 625,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-95",
@@ -3011,30 +2823,28 @@
     "address": "Madrid, Spain",
     "country": "Spain",
     "region": "europe",
-    "ranking": 61,
-    "acceptanceRate": 0.3,
+    "tuition": 18121,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.44,
     "ieltsReq": 6.9,
     "satReq": 1336,
     "entReq": null,
-    "tuition": 18121,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 539,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Экономика",
       "Маркетинг",
       "Менеджмент",
       "Business Administration",
       "Финансы"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.3,
+    "ranking": 61,
+    "housing": {
+      "available": true,
+      "costPerMonth": 539,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-96",
@@ -3043,30 +2853,28 @@
     "address": "Dublin, Ireland",
     "country": "Ireland",
     "region": "europe",
-    "ranking": 40,
-    "acceptanceRate": 0.12,
+    "tuition": 53820,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.87,
     "ieltsReq": 7.4,
     "satReq": 1496,
     "entReq": null,
-    "tuition": 53820,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1034,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Журналистика",
       "Маркетинг",
       "Международные отношения",
       "Лингвистика",
       "Экономика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.12,
+    "ranking": 40,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1034,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-97",
@@ -3075,30 +2883,28 @@
     "address": "Dublin, Ireland",
     "country": "Ireland",
     "region": "europe",
-    "ranking": 61,
-    "acceptanceRate": 0.3,
+    "tuition": 12995,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.65,
     "ieltsReq": 6.7,
     "satReq": 1447,
     "entReq": null,
-    "tuition": 12995,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 557,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Business Administration",
       "Гражданское строительство",
       "Экономика",
       "Финансы",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.3,
+    "ranking": 61,
+    "housing": {
+      "available": true,
+      "costPerMonth": 557,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-98",
@@ -3107,30 +2913,28 @@
     "address": "Edinburgh, UK",
     "country": "UK",
     "region": "europe",
-    "ranking": 5,
-    "acceptanceRate": 0.07,
+    "tuition": 16830,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.88,
     "ieltsReq": 7.4,
     "satReq": 1531,
     "entReq": null,
-    "tuition": 16830,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1169,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Фармация",
       "Международные отношения",
       "Журналистика",
       "Лингвистика",
       "Общая медицина"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.07,
+    "ranking": 5,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1169,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-99",
@@ -3139,30 +2943,28 @@
     "address": "Manchester, UK",
     "country": "UK",
     "region": "europe",
-    "ranking": 21,
-    "acceptanceRate": 0.06,
+    "tuition": 51989,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.75,
     "ieltsReq": 7.5,
     "satReq": 1518,
     "entReq": null,
-    "tuition": 51989,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 981,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международный бизнес",
       "Электротехника",
       "Маркетинг",
       "Менеджмент",
       "Экономика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.06,
+    "ranking": 21,
+    "housing": {
+      "available": true,
+      "costPerMonth": 981,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-100",
@@ -3171,30 +2973,28 @@
     "address": "London, UK",
     "country": "UK",
     "region": "europe",
-    "ranking": 9,
-    "acceptanceRate": 0.15,
+    "tuition": 29472,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.91,
     "ieltsReq": 7.4,
     "satReq": 1522,
     "entReq": null,
-    "tuition": 29472,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1141,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Фармация",
       "Международные отношения",
       "Лингвистика",
       "Журналистика",
       "Общественное здравоохранение"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.15,
+    "ranking": 9,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1141,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "europe-101",
@@ -3203,30 +3003,28 @@
     "address": "London, UK",
     "country": "UK",
     "region": "europe",
-    "ranking": 31,
-    "acceptanceRate": 0.06,
+    "tuition": 42287,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.85,
     "ieltsReq": 7.3,
     "satReq": 1484,
     "entReq": null,
-    "tuition": 42287,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 663,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международные отношения",
       "Журналистика",
       "Педагогика",
       "Менеджмент",
       "Юриспруденция"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.06,
+    "ranking": 31,
+    "housing": {
+      "available": true,
+      "costPerMonth": 663,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-102",
@@ -3235,30 +3033,28 @@
     "address": "Singapore, Singapore",
     "country": "Singapore",
     "region": "asia",
-    "ranking": 2,
-    "acceptanceRate": 0.05,
+    "tuition": 41121,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.71,
     "ieltsReq": 7.1,
     "satReq": 1546,
     "entReq": null,
-    "tuition": 41121,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 426,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Кибербезопасность",
       "Международный бизнес",
       "Robotics",
       "Экономика",
       "Маркетинг"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.05,
+    "ranking": 2,
+    "housing": {
+      "available": true,
+      "costPerMonth": 426,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-103",
@@ -3267,30 +3063,28 @@
     "address": "Singapore, Singapore",
     "country": "Singapore",
     "region": "asia",
-    "ranking": 9,
-    "acceptanceRate": 0.13,
+    "tuition": 34334,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.83,
     "ieltsReq": 7.3,
     "satReq": 1459,
     "entReq": null,
-    "tuition": 34334,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 541,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Machine Engineering",
       "Гражданское строительство",
       "Нефтегазовое дело",
       "Robotics",
       "Кибербезопасность"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.13,
+    "ranking": 9,
+    "housing": {
+      "available": true,
+      "costPerMonth": 541,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-104",
@@ -3299,30 +3093,28 @@
     "address": "Seoul, South Korea",
     "country": "South Korea",
     "region": "asia",
-    "ranking": 32,
-    "acceptanceRate": 0.08,
+    "tuition": 18983,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.83,
     "ieltsReq": 7.2,
     "satReq": 1464,
     "entReq": null,
-    "tuition": 18983,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 525,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Data Science",
       "Менеджмент",
       "Robotics",
       "Кибербезопасность",
       "Software Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.08,
+    "ranking": 32,
+    "housing": {
+      "available": true,
+      "costPerMonth": 525,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-105",
@@ -3331,30 +3123,28 @@
     "address": "Daejeon, South Korea",
     "country": "South Korea",
     "region": "asia",
-    "ranking": 3,
-    "acceptanceRate": 0.14,
+    "tuition": 37444,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.91,
     "ieltsReq": 7.4,
     "satReq": 1529,
     "entReq": null,
-    "tuition": 37444,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 833,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Robotics",
       "Computer Science",
       "Электротехника",
       "Software Engineering",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.14,
+    "ranking": 3,
+    "housing": {
+      "available": true,
+      "costPerMonth": 833,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-106",
@@ -3363,30 +3153,28 @@
     "address": "Seoul, South Korea",
     "country": "South Korea",
     "region": "asia",
-    "ranking": 121,
-    "acceptanceRate": 0.25,
+    "tuition": 19254,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.64,
     "ieltsReq": 6.9,
     "satReq": 1421,
     "entReq": null,
-    "tuition": 19254,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 480,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Международные отношения",
       "Юриспруденция",
       "Педагогика",
       "Маркетинг",
       "Business Administration"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.25,
+    "ranking": 121,
+    "housing": {
+      "available": true,
+      "costPerMonth": 480,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-107",
@@ -3395,30 +3183,28 @@
     "address": "Seoul, South Korea",
     "country": "South Korea",
     "region": "asia",
-    "ranking": 91,
-    "acceptanceRate": 0.21,
+    "tuition": 16502,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.41,
     "ieltsReq": 6.7,
     "satReq": 1382,
     "entReq": null,
-    "tuition": 16502,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 423,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Business Administration",
       "Экономика",
       "Педагогика",
       "Юриспруденция",
       "Международные отношения"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.21,
+    "ranking": 91,
+    "housing": {
+      "available": true,
+      "costPerMonth": 423,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-108",
@@ -3427,30 +3213,28 @@
     "address": "Seoul, South Korea",
     "country": "South Korea",
     "region": "asia",
-    "ranking": 385,
-    "acceptanceRate": 0.55,
+    "tuition": 2476,
+    "scholarships": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
     "gpaReq": 3.4,
     "ieltsReq": 6.4,
     "satReq": 1185,
     "entReq": null,
-    "tuition": 2476,
-    "currency": "USD",
-    "grants": "Ограниченные стипендии, часто доступны гос. программы обмена (напр. Болашак)",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1191,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Machine Engineering",
       "Электротехника",
       "Гражданское строительство",
       "Химическая инженерия",
       "Нефтегазовое дело"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.55,
+    "ranking": 385,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1191,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-109",
@@ -3459,30 +3243,28 @@
     "address": "Tokyo, Japan",
     "country": "Japan",
     "region": "asia",
-    "ranking": 37,
-    "acceptanceRate": 0.16,
+    "tuition": 47896,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.95,
     "ieltsReq": 7,
     "satReq": 1465,
     "entReq": null,
-    "tuition": 47896,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 644,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "IT-менеджмент",
       "Machine Engineering",
       "Электротехника",
       "Robotics",
       "Гражданское строительство"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.16,
+    "ranking": 37,
+    "housing": {
+      "available": true,
+      "costPerMonth": 644,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-110",
@@ -3491,30 +3273,28 @@
     "address": "Tokyo, Japan",
     "country": "Japan",
     "region": "asia",
-    "ranking": 136,
-    "acceptanceRate": 0.31,
+    "tuition": 9221,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.36,
     "ieltsReq": 6.8,
     "satReq": 1406,
     "entReq": null,
-    "tuition": 9221,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1073,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Лингвистика",
       "Международные отношения",
       "Business Administration",
       "Менеджмент",
       "Экономика"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.31,
+    "ranking": 136,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1073,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-111",
@@ -3523,30 +3303,28 @@
     "address": "Tokyo, Japan",
     "country": "Japan",
     "region": "asia",
-    "ranking": 78,
-    "acceptanceRate": 0.33,
+    "tuition": 23119,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.49,
     "ieltsReq": 6.6,
     "satReq": 1344,
     "entReq": null,
-    "tuition": 23119,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 554,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Business Administration",
       "Фармация",
       "Экономика",
       "Общая медицина",
       "Финансы"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.33,
+    "ranking": 78,
+    "housing": {
+      "available": true,
+      "costPerMonth": 554,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-112",
@@ -3555,30 +3333,28 @@
     "address": "Kyoto, Japan",
     "country": "Japan",
     "region": "asia",
-    "ranking": 33,
-    "acceptanceRate": 0.14,
+    "tuition": 32152,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.83,
     "ieltsReq": 7.5,
     "satReq": 1507,
     "entReq": null,
-    "tuition": 32152,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 956,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Психология",
       "IT-менеджмент",
       "Software Engineering",
       "Журналистика",
       "Computer Science"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.14,
+    "ranking": 33,
+    "housing": {
+      "available": true,
+      "costPerMonth": 956,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-113",
@@ -3587,30 +3363,28 @@
     "address": "Hong Kong, Hong Kong",
     "country": "Hong Kong",
     "region": "asia",
-    "ranking": 31,
-    "acceptanceRate": 0.12,
+    "tuition": 24690,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.74,
     "ieltsReq": 7.5,
     "satReq": 1477,
     "entReq": null,
-    "tuition": 24690,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1117,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Маркетинг",
       "Общая медицина",
       "Фармация",
       "Общественное здравоохранение",
       "Business Administration"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.12,
+    "ranking": 31,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1117,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-114",
@@ -3619,30 +3393,28 @@
     "address": "Hong Kong, Hong Kong",
     "country": "Hong Kong",
     "region": "asia",
-    "ranking": 24,
-    "acceptanceRate": 0.07,
+    "tuition": 40106,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.76,
     "ieltsReq": 7.3,
     "satReq": 1488,
     "entReq": null,
-    "tuition": 40106,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 899,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Data Science",
       "Computer Science",
       "Гражданское строительство",
       "Кибербезопасность",
       "Software Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.07,
+    "ranking": 24,
+    "housing": {
+      "available": true,
+      "costPerMonth": 899,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-115",
@@ -3651,30 +3423,28 @@
     "address": "Hong Kong, Hong Kong",
     "country": "Hong Kong",
     "region": "asia",
-    "ranking": 71,
-    "acceptanceRate": 0.32,
+    "tuition": 19262,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.54,
     "ieltsReq": 6.8,
     "satReq": 1358,
     "entReq": null,
-    "tuition": 19262,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 440,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Журналистика",
       "Международный бизнес",
       "Маркетинг",
       "Экономика",
       "Финансы"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.32,
+    "ranking": 71,
+    "housing": {
+      "available": true,
+      "costPerMonth": 440,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-116",
@@ -3683,30 +3453,28 @@
     "address": "Beijing, China",
     "country": "China",
     "region": "asia",
-    "ranking": 19,
-    "acceptanceRate": 0.08,
+    "tuition": 20885,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.9,
     "ieltsReq": 7.5,
     "satReq": 1525,
     "entReq": null,
-    "tuition": 20885,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 956,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Педагогика",
       "Международные отношения",
       "Data Science",
       "Журналистика",
       "IT-менеджмент"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.08,
+    "ranking": 19,
+    "housing": {
+      "available": true,
+      "costPerMonth": 956,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-117",
@@ -3715,30 +3483,28 @@
     "address": "Beijing, China",
     "country": "China",
     "region": "asia",
-    "ranking": 8,
-    "acceptanceRate": 0.11,
+    "tuition": 37347,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.86,
     "ieltsReq": 7.4,
     "satReq": 1499,
     "entReq": null,
-    "tuition": 37347,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 569,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Data Science",
       "Computer Science",
       "Robotics",
       "Кибербезопасность",
       "Software Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.11,
+    "ranking": 8,
+    "housing": {
+      "available": true,
+      "costPerMonth": 569,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-118",
@@ -3747,30 +3513,28 @@
     "address": "Shanghai, China",
     "country": "China",
     "region": "asia",
-    "ranking": 30,
-    "acceptanceRate": 0.08,
+    "tuition": 49026,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.93,
     "ieltsReq": 7.2,
     "satReq": 1513,
     "entReq": null,
-    "tuition": 49026,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1040,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Менеджмент",
       "Экономика",
       "Педагогика",
       "Маркетинг",
       "Финансы"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.08,
+    "ranking": 30,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1040,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-119",
@@ -3779,30 +3543,28 @@
     "address": "Shanghai, China",
     "country": "China",
     "region": "asia",
-    "ranking": 20,
-    "acceptanceRate": 0.05,
+    "tuition": 51917,
+    "scholarships": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
     "gpaReq": 3.79,
     "ieltsReq": 7.1,
     "satReq": 1533,
     "entReq": null,
-    "tuition": 51917,
-    "currency": "USD",
-    "grants": "Merit-стипендии до 50%, need-based помощь для международных студентов ограничена",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1085,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Химическая инженерия",
       "Software Engineering",
       "Computer Science",
       "Data Science",
       "Гражданское строительство"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.05,
+    "ranking": 20,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1085,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   },
   {
     "id": "asia-120",
@@ -3811,29 +3573,27 @@
     "address": "Taipei, Taiwan",
     "country": "Taiwan",
     "region": "asia",
-    "ranking": 50,
-    "acceptanceRate": 0.4,
+    "tuition": 13555,
+    "scholarships": "Стипендии для международных студентов до 30-40%",
     "gpaReq": 3.51,
     "ieltsReq": 6.7,
     "satReq": 1323,
     "entReq": null,
-    "tuition": 13555,
-    "currency": "USD",
-    "grants": "Стипендии для международных студентов до 30-40%",
-    "housing": {
-      "available": true,
-      "costPerMonth": 1116,
-      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
-    },
-    "directions": [
+    "deadline": "2027-04-01",
+    "programs": [
       "Computer Science",
       "Гражданское строительство",
       "Robotics",
       "Software Engineering",
       "Machine Engineering"
     ],
-    "deadline": "2027-04-01",
-    "website": null,
-    "dataNote": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
+    "acceptanceRate": 0.4,
+    "ranking": 50,
+    "housing": {
+      "available": true,
+      "costPerMonth": 1116,
+      "description": "Университетское общежитие или партнёрское жильё, подача заявки отдельно"
+    },
+    "description": "Данные ориентировочные, для демо-прототипа хакатона — перед реальной подачей проверяйте на официальном сайте вуза"
   }
 ]

@@ -66,6 +66,7 @@ function UniCard({
           <p className="text-caption text-text-secondary mt-1">
             {countryFlag[uni.country] ?? '🌍'} {uni.country}
           </p>
+          {(uni as any).city && <p className="text-caption text-text-secondary">{(uni as any).city}, {(uni as any).address}</p>}
         </div>
         <button
           onClick={() => onToggle(uni.id)}

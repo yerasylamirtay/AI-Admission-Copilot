@@ -56,6 +56,8 @@ export default function Step5Compare({
 
   const rows = [
     { label: 'Страна', render: (u: RecommendedUniversity) => u.country },
+    { label: 'Город', render: (u: RecommendedUniversity) => (u as any).city ?? '—' },
+    { label: 'Адрес', render: (u: RecommendedUniversity) => (u as any).address ?? '—' },
     { label: 'Эшелон', render: (u: RecommendedUniversity) => getTierBadge(u.tier) },
     {
       label: 'Стоимость',

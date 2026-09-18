@@ -57,6 +57,8 @@ export type UniversityTier = "dream" | "target" | "safety";
 export interface University {
   id: string;
   name: string;
+  city: string;
+  address: string;
   country: string;
   region: Region;
   tuition: number;
@@ -70,6 +72,7 @@ export interface University {
   acceptanceRate: number;
   ranking: number;
   description: string;
+  housing: { available: boolean; costPerMonth: number; description: string };
 }
 
 // ── Recommendations ──
