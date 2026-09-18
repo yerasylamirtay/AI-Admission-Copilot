@@ -1,6 +1,7 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { supabase } from '@/lib/supabase';
 
 export type AppSection = 'home' | 'profile' | 'diagnose' | 'universities' | 'compare' | 'roadmap' | 'next';
 
@@ -11,6 +12,7 @@ interface HeaderProps {
   onLogout: () => void;
   onGoHome?: () => void;
   isHomeView?: boolean;
+  onOpenAuthModal?: () => void;
 }
 
 export default function Header({
@@ -20,6 +22,7 @@ export default function Header({
   onLogout,
   onGoHome,
   isHomeView,
+  onOpenAuthModal,
 }: HeaderProps) {
   return (
     <header className="bg-white border-b border-surface-border sticky top-0 z-20">
@@ -27,6 +30,7 @@ export default function Header({
         {/* Brand */}
         <div className="flex items-center gap-6">
           <button
+            type="button"
             onClick={onGoHome}
             className="flex items-center gap-2 group text-left focus:outline-none"
           >
@@ -42,50 +46,62 @@ export default function Header({
           </button>
 
           {/* Navigation links if user is authenticated / completed steps */}
-          {userEmail && (
-            <nav className="hidden lg:flex items-center gap-1 bg-surface-muted p-1 rounded-full border border-surface-border text-xs font-semibold">
-              <button
-                onClick={onGoHome}
-                className={`px-3 py-1.5 rounded-full transition-all ${
-                  isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                🏠 Дашборд
-              </button>
-              <button
-                onClick={() => onNavigate(2)}
-                className={`px-3 py-1.5 rounded-full transition-all ${
-                  currentStep === 2 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                Профиль
-              </button>
-              <button
-                onClick={() => onNavigate(3)}
-                className={`px-3 py-1.5 rounded-full transition-all ${
-                  currentStep === 3 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                Диагностика
-              </button>
-              <button
-                onClick={() => onNavigate(4)}
-                className={`px-3 py-1.5 rounded-full transition-all ${
-                  currentStep === 4 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                Вузы
-              </button>
-              <button
-                onClick={() => onNavigate(6)}
-                className={`px-3 py-1.5 rounded-full transition-all ${
-                  currentStep === 6 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                Roadmap
-              </button>
-            </nav>
-          )}
+          <nav className="hidden lg:flex items-center gap-1 bg-surface-muted p-1 rounded-full border border-surface-border text-xs font-semibold">
+            <button
+              type="button"
+              onClick={onGoHome}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              🏠 Дашборд
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate(2)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 2 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Профиль
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate(3)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 3 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Диагностика
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate(4)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 4 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Вузы
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate(5)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 5 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Сравнение
+            </button>
+            <button
+              type="button"
+              onClick={() => onNavigate(6)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 6 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Roadmap
+            </button>
+          </nav>
         </div>
 
         {/* User profile & controls */}
@@ -99,6 +115,7 @@ export default function Header({
                 <span className="text-[11px] text-success font-medium">Аккаунт подключен</span>
               </div>
               <button
+                type="button"
                 onClick={onLogout}
                 className="text-xs font-semibold px-3 py-1.5 rounded-button text-danger hover:bg-danger-muted border border-transparent hover:border-danger/20 transition-all"
               >
@@ -107,8 +124,9 @@ export default function Header({
             </div>
           ) : (
             <button
-              onClick={() => onNavigate(1)}
-              className="text-xs font-semibold text-primary hover:underline"
+              type="button"
+              onClick={onOpenAuthModal}
+              className="btn-primary text-xs py-2 px-4 shadow-purple"
             >
               Войти в аккаунт
             </button>
