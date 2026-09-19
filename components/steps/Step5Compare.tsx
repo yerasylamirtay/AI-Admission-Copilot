@@ -9,6 +9,7 @@ interface Step5CompareProps {
   onBack: () => void;
   onNext: () => void;
   onToggleComparison: (id: string) => void;
+  isGeneratingRoadmap?: boolean;
 }
 
 export default function Step5Compare({
@@ -17,6 +18,7 @@ export default function Step5Compare({
   onBack,
   onNext,
   onToggleComparison,
+  isGeneratingRoadmap,
 }: Step5CompareProps) {
   const allRecs: RecommendedUniversity[] = [
     ...(recommendations?.dream ?? []),
@@ -205,8 +207,15 @@ export default function Step5Compare({
         <button onClick={onBack} className="btn-secondary text-xs py-3 px-6">
           ← Назад к рекомендациям
         </button>
-        <button onClick={onNext} className="btn-primary text-sm py-3.5 px-8">
-          Сформировать Roadmap поступления →
+        <button
+          onClick={onNext}
+          disabled={isGeneratingRoadmap}
+          className="btn-primary text-sm py-3.5 px-8 flex items-center gap-2 disabled:opacity-60"
+        >
+          {isGeneratingRoadmap && (
+            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+          )}
+          {isGeneratingRoadmap ? 'AI строит план поступления…' : 'Сформировать Roadmap поступления →'}
         </button>
       </div>
     </div>

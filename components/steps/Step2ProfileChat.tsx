@@ -28,6 +28,8 @@ export default function Step2ProfileChat({
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [parsedProfile, setParsedProfile] = useState<Profile | null>(null);
+  const [finishing, setFinishing] = useState(false);
+  const [finishError, setFinishError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -79,28 +81,57 @@ export default function Step2ProfileChat({
     }
   };
 
-  const handleFinish = () => {
+  const handleFinish = async () => {
+    // Fast path: the chat already produced a parsed profile naturally
+    // (the AI included the <!--PROFILE_JSON--> marker on its own).
     if (parsedProfile) {
       onProfileComplete(parsedProfile);
-    } else {
-      // Create fallback profile if user finishes early
-      const fallback: Profile = {
-        grade: profile.grade || 11,
-        interests: profile.interests || ['Computer Science', 'Business'],
-        gpa: profile.gpa || 4.5,
-        gpaScale: profile.gpaScale || '5.0',
-        languages: profile.languages || ['Русский', 'Английский (B2)'],
+      return;
+    }
+
+    // Reliable path: explicitly ask the AI to extract structured data from
+    // the WHOLE real conversation transcript, instead of guessing. This is
+    // what actually fixes "always the same numbers" — we no longer depend
+    // on the chat happening to end with the JSON marker on the right turn.
+    setFinishing(true);
+    setFinishError(null);
+    try {
+      const res = await fetch('/api/profile-extract', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages }),
+      });
+      const data = await res.json();
+      if (data.profile) {
+        onProfileComplete(data.profile as Profile);
+        return;
+      }
+      throw new Error(data.error || 'Пустой ответ извлечения');
+    } catch (err: any) {
+      console.error('profile-extract failed, using minimal fallback:', err.message);
+      setFinishError('Не удалось получить точные данные от ИИ — используем только то, что удалось понять из диалога, остальное будет уточнено позже.');
+      // Last-resort fallback: minimal, honestly mostly-null profile, NOT a
+      // realistic-looking fake student. This is intentionally sparse so it
+      // never silently masquerades as real user data.
+      const minimalFallback: Profile = {
+        grade: profile.grade ?? null as any,
+        interests: profile.interests || [],
+        gpa: profile.gpa ?? null as any,
+        gpaScale: profile.gpaScale || null as any,
+        languages: profile.languages || [],
         exams: profile.exams || {
-          ielts: { score: 6.5, date: '2024-05', taken: true },
+          ielts: { score: null, date: null, taken: false },
           sat: { score: null, date: null, taken: false },
-          ent: { score: 110, date: '2024-06', taken: true }
+          ent: { score: null, date: null, taken: false },
         },
-        countries: profile.countries || ['Казахстан', 'Европа', 'США'],
-        budget: profile.budget || 'grant',
-        timeline: '2025',
-        constraints: 'Приоритет грант или стипендия'
+        countries: profile.countries || [],
+        budget: profile.budget || null as any,
+        timeline: profile.timeline || null as any,
+        constraints: profile.constraints || null as any,
       };
-      onProfileComplete(fallback);
+      onProfileComplete(minimalFallback);
+    } finally {
+      setFinishing(false);
     }
   };
 
@@ -130,9 +161,10 @@ export default function Step2ProfileChat({
           {parsedProfile && (
             <button
               onClick={handleFinish}
-              className="btn-primary py-2 px-4 text-xs"
+              disabled={finishing}
+              className="btn-primary py-2 px-4 text-xs disabled:opacity-60"
             >
-              Перейти к диагностике →
+              {finishing ? 'Обрабатываем…' : 'Перейти к диагностике →'}
             </button>
           )}
         </div>
@@ -199,9 +231,10 @@ export default function Step2ProfileChat({
           </div>
           <button
             onClick={handleFinish}
-            className="btn-primary py-2.5 px-5 text-xs w-full sm:w-auto"
+            disabled={finishing}
+            className="btn-primary py-2.5 px-5 text-xs w-full sm:w-auto disabled:opacity-60"
           >
-            Далее — Диагностика →
+            {finishing ? 'Обрабатываем…' : 'Далее — Диагностика →'}
           </button>
         </div>
       )}
@@ -266,12 +299,19 @@ export default function Step2ProfileChat({
         {!parsedProfile && (
           <button
             onClick={handleFinish}
-            className="text-xs text-ink-muted hover:text-primary underline"
+            disabled={finishing}
+            className="text-xs text-ink-muted hover:text-primary underline disabled:opacity-60"
           >
-            Заполнить с готовым пресетом →
+            {finishing ? 'Извлекаем профиль из диалога…' : 'Завершить и извлечь профиль из диалога →'}
           </button>
         )}
       </div>
+
+      {finishError && (
+        <p className="mt-3 text-xs text-warning bg-warning-muted border border-warning/30 rounded-button p-2.5">
+          ⚠ {finishError}
+        </p>
+      )}
     </div>
   );
 }

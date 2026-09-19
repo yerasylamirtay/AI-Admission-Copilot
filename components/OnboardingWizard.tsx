@@ -499,6 +499,7 @@ export default function OnboardingWizard() {
                 recommendations={recommendations}
                 onToggleComparison={handleToggleComparison}
                 onBack={() => setCurrentStep(3)}
+                isGeneratingRoadmap={loadingAction}
                 onNext={async () => {
                   await runRoadmap(profile, selectedForComparison);
                   setCurrentStep(5);
