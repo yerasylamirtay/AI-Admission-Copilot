@@ -16,6 +16,19 @@ import Step6Roadmap from '@/components/steps/Step6Roadmap';
 import Step7Home from '@/components/steps/Step7Home';
 import universitiesData from '@/data/universities.json';
 
+// NOTE ON STEP NUMBERING (post-fix):
+// Login/registration is a GATE, not a numbered step — it is controlled by
+// the `user` state, not by `currentStep`. Once `user` is set, currentStep
+// covers only the real 6-step flow:
+//   1 = Profile chat (was step 2)
+//   2 = Diagnosis    (was step 3)
+//   3 = Recommendations (was step 4)
+//   4 = Compare       (was step 5)
+//   5 = Roadmap       (was step 6)
+//   6 = Home / Next action (was step 7)
+// This fixes the bug where clicking the old "Вход" progress dot re-rendered
+// the landing/login screen and looked like a forced logout.
+
 export default function OnboardingWizard() {
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [user, setUser] = useState<any>(null);
@@ -39,13 +52,11 @@ export default function OnboardingWizard() {
 
   // 1. Initial Load & Auth Listeners
   useEffect(() => {
-    // Check active supabase session
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session?.user) {
         setUser(session.user);
         loadUserDataFromSupabase(session.user.id);
       } else {
-        // Local storage fallback for guests
         try {
           const saved = localStorage.getItem('admitpath_state_v2');
           if (saved) {
@@ -61,8 +72,9 @@ export default function OnboardingWizard() {
         } catch (e) {
           console.warn('Local storage error:', e);
         }
-        // Guests always start on the public welcome screen. Progress data may be
-        // cached, but it must not bypass the landing page or expose dashboard UI.
+        // Not logged in → the gate (Step1Landing) is shown based on `user`
+        // being null, not based on currentStep. Reset step to 1 for when
+        // login succeeds.
         setCurrentStep(1);
         setIsHomeView(false);
         setLoaded(true);
@@ -106,7 +118,6 @@ export default function OnboardingWizard() {
   // Load from Supabase for logged in user
   const loadUserDataFromSupabase = async (uid: string) => {
     try {
-      // 1. Load profile
       const { data: profData } = await supabase.from('profiles').select('*').eq('uid', uid).maybeSingle();
       if (profData) {
         const mappedProf: Profile = {
@@ -123,7 +134,6 @@ export default function OnboardingWizard() {
         setProfile(mappedProf);
       }
 
-      // 2. Load diagnosis
       const { data: diagData } = await supabase.from('diagnoses').select('*').eq('uid', uid).order('created_at', { ascending: false }).limit(1).maybeSingle();
       if (diagData) {
         setDiagnosis({
@@ -137,7 +147,6 @@ export default function OnboardingWizard() {
         });
       }
 
-      // 3. Load recommendations
       const { data: recData } = await supabase.from('recommendations').select('*').eq('uid', uid);
       if (recData && recData.length > 0) {
         const uniMap = new Map((universitiesData as any[]).map((u) => [u.id, u]));
@@ -159,7 +168,6 @@ export default function OnboardingWizard() {
         }
       }
 
-      // 4. Load roadmap items
       const { data: roadData } = await supabase.from('roadmap_items').select('*').eq('uid', uid);
       if (roadData && roadData.length > 0) {
         const items = roadData.map((item) => ({
@@ -181,7 +189,6 @@ export default function OnboardingWizard() {
         setRoadmapProgress(progressMap);
       }
 
-      // 5. Update streak
       const today = new Date().toISOString().split('T')[0];
       const { data: streakData } = await supabase.from('streaks').select('*').eq('uid', uid).maybeSingle();
       if (streakData) {
@@ -198,14 +205,17 @@ export default function OnboardingWizard() {
         setStreak({ currentStreak: 1, lastVisitDate: today });
       }
 
-      // If user has roadmap items or completed steps before, direct to Home or step 2
+      // Step numbering shifted by -1 (see note at top of file):
+      // roadmap exists -> go to Home (was 7, now 6)
+      // profile exists but no roadmap -> go to Diagnosis (was 3, now 2)
+      // nothing yet -> go to Profile chat (was 2, now 1)
       if (roadData && roadData.length > 0) {
         setIsHomeView(true);
-        setCurrentStep(7);
+        setCurrentStep(6);
       } else if (profData) {
-        setCurrentStep(3);
-      } else {
         setCurrentStep(2);
+      } else {
+        setCurrentStep(1);
       }
     } catch (e) {
       console.warn('Error loading from supabase:', e);
@@ -214,7 +224,6 @@ export default function OnboardingWizard() {
     }
   };
 
-  // Run Diagnosis Calculation & AI Synthesis
   const runDiagnosis = useCallback(async (currentProf: Partial<Profile>) => {
     setLoadingAction(true);
     try {
@@ -226,8 +235,6 @@ export default function OnboardingWizard() {
       const data = await res.json();
       if (data.diagnosis) {
         setDiagnosis(data.diagnosis);
-
-        // Save diagnosis to Supabase
         if (user) {
           await supabase.from('diagnoses').insert({
             uid: user.id,
@@ -247,7 +254,6 @@ export default function OnboardingWizard() {
     }
   }, [user]);
 
-  // Run University Recommendations
   const runRecommendations = useCallback(async (currentProf: Partial<Profile>, currentDiag: DiagnoseResult) => {
     setLoadingAction(true);
     try {
@@ -260,14 +266,12 @@ export default function OnboardingWizard() {
       if (data.recommendations) {
         setRecommendations(data.recommendations);
 
-        // Pre-select top 2-3 target universities for comparison
         const initialSelected = [
           ...(data.recommendations.target || []).slice(0, 2),
           ...(data.recommendations.dream || []).slice(0, 1),
         ].map((u: any) => u.id);
         setSelectedForComparison(initialSelected);
 
-        // Save recommendations to Supabase
         if (user) {
           await supabase.from('recommendations').delete().eq('uid', user.id);
           const allToSave = [
@@ -294,7 +298,6 @@ export default function OnboardingWizard() {
     }
   }, [user]);
 
-  // Run Adaptive Roadmap
   const runRoadmap = useCallback(async (currentProf: Partial<Profile>, selectedIds: string[]) => {
     setLoadingAction(true);
     try {
@@ -318,7 +321,6 @@ export default function OnboardingWizard() {
       if (data.roadmap) {
         setRoadmap(data.roadmap);
 
-        // Save to Supabase
         if (user && data.roadmap.items) {
           await supabase.from('roadmap_items').delete().eq('uid', user.id);
           for (const item of data.roadmap.items) {
@@ -343,7 +345,6 @@ export default function OnboardingWizard() {
     }
   }, [recommendations, user]);
 
-  // Toggle university comparison selection (up to 8)
   const handleToggleComparison = (id: string) => {
     setSelectedForComparison((prev) => {
       if (prev.includes(id)) {
@@ -354,7 +355,6 @@ export default function OnboardingWizard() {
     });
   };
 
-  // Toggle roadmap item checkbox
   const handleToggleRoadmapItem = async (id: string) => {
     const newVal = !roadmapProgress[id];
     setRoadmapProgress((prev) => ({ ...prev, [id]: newVal }));
@@ -364,7 +364,6 @@ export default function OnboardingWizard() {
     }
   };
 
-  // Logout handler
   const handleLogout = async () => {
     await supabase.auth.signOut();
     localStorage.removeItem('admitpath_state_v2');
@@ -378,7 +377,6 @@ export default function OnboardingWizard() {
     setCurrentStep(1);
   };
 
-  // Loading state
   if (!loaded) {
     return (
       <div className="min-h-screen bg-surface-secondary flex items-center justify-center">
@@ -387,43 +385,45 @@ export default function OnboardingWizard() {
     );
   }
 
-  return (
-    <div className="min-h-screen bg-surface-secondary flex flex-col">
-      {/* Header */}
-      {(currentStep > 1 || isHomeView) && <Header
-          currentStep={currentStep}
-          userEmail={user?.email}
-          onNavigate={(step) => {
-            setIsHomeView(false);
-            setCurrentStep(step);
-          }}
-          onLogout={handleLogout}
-          onGoHome={() => setIsHomeView(true)}
-          isHomeView={isHomeView}
-          onOpenAuthModal={() => setIsAuthModalOpen(true)}
-        />}
-
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        onSuccess={(loggedInUser) => {
+  // ── AUTH GATE ──
+  // Login/registration is NOT a numbered step. If there's no authenticated
+  // user, always show the landing/login screen regardless of currentStep.
+  // This is the fix for the bug where the old "Вход" step could be revisited
+  // via the progress bar and looked like a forced logout.
+  if (!user) {
+    return (
+      <Step1Landing
+        onStart={() => setCurrentStep(1)}
+        onLoginSuccess={(loggedInUser) => {
           setUser(loggedInUser);
-          setIsAuthModalOpen(false);
-          setIsHomeView(false);
-          setCurrentStep(2);
+          setCurrentStep(1);
         }}
       />
+    );
+  }
 
-      {/* 7-Step Progress Bar (when in step-by-step flow) */}
-      {!isHomeView && currentStep > 1 && (
+  return (
+    <div className="min-h-screen bg-surface-secondary flex flex-col">
+      <Header
+        currentStep={currentStep}
+        userEmail={user?.email}
+        onNavigate={(step) => {
+          setIsHomeView(false);
+          setCurrentStep(step);
+        }}
+        onLogout={handleLogout}
+        onGoHome={() => setIsHomeView(true)}
+        isHomeView={isHomeView}
+      />
+
+      {!isHomeView && (
         <ProgressBar
           currentStep={currentStep}
-          totalSteps={7}
+          totalSteps={6}
           onStepClick={(step) => setCurrentStep(step)}
         />
       )}
 
-      {/* Main Step Render */}
       <main className="flex-1">
         {isHomeView ? (
           <Step7Home
@@ -432,40 +432,19 @@ export default function OnboardingWizard() {
             onToggleRoadmapItem={handleToggleRoadmapItem}
             streak={streak}
             targetGoalName={diagnosis?.goal}
-            onGoToRoadmap={() => {
-              setIsHomeView(false);
-              setCurrentStep(6);
-            }}
-            onGoToProfile={() => {
-              setIsHomeView(false);
-              setCurrentStep(2);
-            }}
-            onGoToUniversities={() => {
-              setIsHomeView(false);
-              setCurrentStep(4);
-            }}
+            onGoToRoadmap={() => { setIsHomeView(false); setCurrentStep(5); }}
+            onGoToProfile={() => { setIsHomeView(false); setCurrentStep(1); }}
+            onGoToUniversities={() => { setIsHomeView(false); setCurrentStep(3); }}
           />
         ) : (
           <>
-            {/* Step 1: Landing */}
+            {/* Step 1: Profile chat (was Step2) */}
             {currentStep === 1 && (
-              <Step1Landing
-                onStart={() => setCurrentStep(2)}
-                onLoginSuccess={(loggedInUser) => {
-                  setUser(loggedInUser);
-                  setCurrentStep(2);
-                }}
-              />
-            )}
-
-            {/* Step 2: Profile Chat */}
-            {currentStep === 2 && (
               <Step2ProfileChat
                 profile={profile}
-                onBack={() => setCurrentStep(1)}
+                onBack={() => setIsHomeView(true)}
                 onProfileComplete={async (newProf) => {
                   setProfile(newProf);
-                  // Save profile to Supabase
                   if (user) {
                     await supabase.from('profiles').upsert({
                       uid: user.id,
@@ -481,96 +460,91 @@ export default function OnboardingWizard() {
                     });
                   }
                   const diag = await runDiagnosis(newProf);
-                  if (diag) {
-                    setCurrentStep(3);
-                  }
+                  if (diag) setCurrentStep(2);
                 }}
               />
             )}
 
-            {/* Step 3: Diagnosis */}
-            {currentStep === 3 && (
+            {/* Step 2: Diagnosis (was Step3) */}
+            {currentStep === 2 && (
               <Step3Diagnose
                 diagnosis={diagnosis}
                 profile={profile}
                 isLoadingDiagnose={loadingAction}
-                onBack={() => setCurrentStep(2)}
+                onBack={() => setCurrentStep(1)}
                 onNext={async () => {
-                  if (diagnosis) {
-                    await runRecommendations(profile, diagnosis);
-                  }
-                  setCurrentStep(4);
+                  if (diagnosis) await runRecommendations(profile, diagnosis);
+                  setCurrentStep(3);
                 }}
               />
             )}
 
-            {/* Step 4: Recommendations */}
-            {currentStep === 4 && (
+            {/* Step 3: Recommendations (was Step4) */}
+            {currentStep === 3 && (
               <Step4Recommendations
                 profile={profile}
                 recommendations={recommendations}
                 selectedForComparison={selectedForComparison}
                 onToggleComparison={handleToggleComparison}
                 isLoadingRecommend={loadingAction}
-                onBack={() => setCurrentStep(3)}
-                onNext={() => setCurrentStep(5)}
+                onBack={() => setCurrentStep(2)}
+                onNext={() => setCurrentStep(4)}
               />
             )}
 
-            {/* Step 5: Comparison */}
-            {currentStep === 5 && (
+            {/* Step 4: Comparison (was Step5) */}
+            {currentStep === 4 && (
               <Step5Compare
                 selectedForComparison={selectedForComparison}
                 recommendations={recommendations}
                 onToggleComparison={handleToggleComparison}
-                onBack={() => setCurrentStep(4)}
+                onBack={() => setCurrentStep(3)}
                 onNext={async () => {
                   await runRoadmap(profile, selectedForComparison);
-                  setCurrentStep(6);
+                  setCurrentStep(5);
                 }}
               />
             )}
 
-            {/* Step 6: Roadmap */}
-            {currentStep === 6 && (
+            {/* Step 5: Roadmap (was Step6) */}
+            {currentStep === 5 && (
               <Step6Roadmap
                 roadmap={roadmap}
                 roadmapProgress={roadmapProgress}
                 onToggleRoadmapItem={handleToggleRoadmapItem}
                 isLoadingRoadmap={loadingAction}
-                onBack={() => setCurrentStep(5)}
-                onNext={() => {
-                  setIsHomeView(true);
-                  setCurrentStep(7);
-                }}
+                onBack={() => setCurrentStep(4)}
+                onNext={() => { setIsHomeView(true); setCurrentStep(6); }}
               />
             )}
 
-            {/* Step 7: Home View */}
-            {currentStep === 7 && (
+            {/* Step 6: Home / next action (was Step7) */}
+            {currentStep === 6 && (
               <Step7Home
                 roadmap={roadmap}
                 roadmapProgress={roadmapProgress}
                 onToggleRoadmapItem={handleToggleRoadmapItem}
                 streak={streak}
                 targetGoalName={diagnosis?.goal}
-                onGoToRoadmap={() => {
-                  setIsHomeView(false);
-                  setCurrentStep(6);
-                }}
-                onGoToProfile={() => {
-                  setIsHomeView(false);
-                  setCurrentStep(2);
-                }}
-                onGoToUniversities={() => {
-                  setIsHomeView(false);
-                  setCurrentStep(4);
-                }}
+                onGoToRoadmap={() => { setIsHomeView(false); setCurrentStep(5); }}
+                onGoToProfile={() => { setIsHomeView(false); setCurrentStep(1); }}
+                onGoToUniversities={() => { setIsHomeView(false); setCurrentStep(3); }}
               />
             )}
           </>
         )}
       </main>
+
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onSuccess={(loggedInUser) => {
+          setUser(loggedInUser);
+          setIsAuthModalOpen(false);
+          setIsHomeView(false);
+          setCurrentStep(1);
+        }}
+      />
     </div>
   );
 }

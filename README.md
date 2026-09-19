@@ -49,26 +49,28 @@
 
 ---
 
-## 🗺️ 7-шаговый флоу пользователя
+## 🗺️ Флоу пользователя
 
-1. **Шаг 1 — Landing & Вход**:
+Вход — это **гейт перед основным флоу**, а не пронумерованный шаг (пока пользователь не авторизован, показывается только Landing/Login — прогресс-бар и остальные разделы недоступны). После входа пользователь проходит 6 реальных шагов:
+
+0. **Landing & Вход** (гейт, без номера):
    - Ценностное предложение, преимущества сервиса.
    - Авторизация через **Email / Пароль** и **Google OAuth** (Supabase Auth).
-2. **Шаг 2 — Профиль (AI-интервью)**:
+1. **Профиль (AI-интервью)**:
    - Чат с AI-консультантом (до 12 сообщений в сессии).
    - Извлечение данных: класс, интересы, GPA, языки, тесты (IELTS, SAT, ЕНТ), страны, бюджет, сроки, ограничения.
-3. **Шаг 3 — Диагностика**:
+2. **Диагностика**:
    - Расчет индекса готовности (Readiness Index) + визуализация факторов.
    - Блоки: *Саммари профиля*, *Сильные стороны*, *Ограничения и точки роста*, *Образовательная цель*.
-4. **Шаг 4 — Рекомендации вузов**:
-   - Каталог вузов по эшелонам (Dream / Target / Safety).
+3. **Рекомендации вузов**:
+   - Каталог вузов по эшелонам (Dream / Target / Safety), до 30 вузов в выдаче (по 10 на эшелон).
    - AI-объяснение соответствия профилю и условиям гранта.
    - Выбор до 8 вузов в сравнение.
-5. **Шаг 5 — Сравнение**:
+4. **Сравнение**:
    - Сравнительный анализ выбранных вузов в единой интерактивной таблице.
-6. **Шаг 6 — Roadmap**:
+5. **Roadmap**:
    - Персональный пошаговый план с датами дедлайнов, категоризацией и прикрепленными ресурсами.
-7. **Шаг 7 — Дашборд (Home)**:
+6. **Дашборд (Home)**:
    - Центр управления абитуриента, серия заходов, ближайший шаг, быстрый переход к разделам.
 
 ---
@@ -143,7 +145,7 @@
 
 - **Frontend**: Next.js 14 (App Router), React 18, TypeScript, Tailwind CSS.
 - **Backend**: Next.js Serverless Route Handlers.
-- **AI Engine**: Anthropic Claude (Claude 3.5 Haiku) с поддержкой отказоустойчивых фоллбэков.
+- **AI Engine**: Anthropic Claude (`claude-haiku-4-5-20251001`) с поддержкой отказоустойчивых фоллбэков.
 - **База данных & Auth**: Supabase (PostgreSQL, Row Level Security, Google OAuth, Email Auth).
 - **Развертывание**: Vercel-ready.
 
@@ -176,16 +178,23 @@ npm install
 ```
 
 ### 3. Настройка переменных окружения
-Создайте файл `.env.local` на основе `.env.example`:
+Создайте файл `.env` (или `.env.local`) на основе `.env.example`:
 ```env
-# Anthropic API Key (для реального вызова Claude AI)
+# Anthropic API Key (для реального вызова Claude AI) — обязательно, иначе
+# все AI-эндпоинты (чат профиля, объяснения, roadmap, эссе) будут работать
+# в режиме fallback-заглушки
 ANTHROPIC_API_KEY=your_anthropic_api_key
 
-# Supabase
+# Supabase — URL и anon key публичные по дизайну Supabase, но всё равно
+# храните их в .env, а не в коде
 NEXT_PUBLIC_SUPABASE_URL=https://ovgualcgjchuuxqownss.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-NEXT_PUBLIC_GOOGLE_CLIENT_ID=your_google_client_id
 ```
+
+**Важно про Google-вход:** Client ID/Secret для Google **не хранятся в .env этого проекта** — они настраиваются один раз в Supabase Dashboard → Authentication → Providers → Google. Приложение вызывает `supabase.auth.signInWithOAuth({ provider: 'google' })`, а всю OAuth-логику берёт на себя Supabase. Шаги настройки:
+1. Google Cloud Console → APIs & Services → Credentials → Create OAuth client ID (Web application).
+2. В Supabase Dashboard → Authentication → Providers → Google скопируйте готовый Redirect URL и вставьте его в Google Cloud Console в поле Authorized redirect URIs.
+3. Скопируйте Client ID и Client Secret из Google Cloud Console и вставьте их в том же экране Supabase (Providers → Google), включите тумблер.
 
 ### 4. Запуск в режиме разработки
 ```bash

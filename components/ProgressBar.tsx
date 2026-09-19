@@ -9,7 +9,6 @@ interface ProgressBarProps {
 }
 
 const STEP_LABELS = [
-  'Вход',
   'Профиль',
   'Диагностика',
   'Вузы',
@@ -18,7 +17,7 @@ const STEP_LABELS = [
   'План действий'
 ];
 
-export default function ProgressBar({ currentStep, totalSteps = 7, onStepClick }: ProgressBarProps) {
+export default function ProgressBar({ currentStep, totalSteps = 6, onStepClick }: ProgressBarProps) {
   const percentage = Math.min(100, Math.round(((currentStep - 1) / (totalSteps - 1)) * 100));
 
   return (

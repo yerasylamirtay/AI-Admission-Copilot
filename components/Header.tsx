@@ -1,9 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { supabase } from '@/lib/supabase';
-
-export type AppSection = 'home' | 'profile' | 'diagnose' | 'universities' | 'compare' | 'roadmap' | 'next';
+import React from 'react';
 
 interface HeaderProps {
   currentStep: number;
@@ -12,7 +9,6 @@ interface HeaderProps {
   onLogout: () => void;
   onGoHome?: () => void;
   isHomeView?: boolean;
-  onOpenAuthModal?: () => void;
 }
 
 export default function Header({
@@ -22,12 +18,10 @@ export default function Header({
   onLogout,
   onGoHome,
   isHomeView,
-  onOpenAuthModal,
 }: HeaderProps) {
   return (
     <header className="app-header sticky top-0 z-40 border-b border-surface-border">
       <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
-        {/* Brand */}
         <div className="flex items-center gap-6">
           <button
             type="button"
@@ -45,7 +39,8 @@ export default function Header({
             </div>
           </button>
 
-          {/* Navigation links if user is authenticated / completed steps */}
+          {/* Navigation — step numbers shifted by -1 vs the old version:
+              login is a gate now, not a numbered step. */}
           <nav className="hidden lg:flex items-center gap-1 bg-surface-muted p-1 rounded-full border border-surface-border text-xs font-semibold">
             <button
               type="button"
@@ -58,12 +53,21 @@ export default function Header({
             </button>
             <button
               type="button"
+              onClick={() => onNavigate(1)}
+              className={`px-3 py-1.5 rounded-full transition-all ${
+                currentStep === 1 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Профиль
+            </button>
+            <button
+              type="button"
               onClick={() => onNavigate(2)}
               className={`px-3 py-1.5 rounded-full transition-all ${
                 currentStep === 2 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              Профиль
+              Диагностика
             </button>
             <button
               type="button"
@@ -72,7 +76,7 @@ export default function Header({
                 currentStep === 3 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              Диагностика
+              Вузы
             </button>
             <button
               type="button"
@@ -81,7 +85,7 @@ export default function Header({
                 currentStep === 4 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              Вузы
+              Сравнение
             </button>
             <button
               type="button"
@@ -90,47 +94,28 @@ export default function Header({
                 currentStep === 5 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              Сравнение
-            </button>
-            <button
-              type="button"
-              onClick={() => onNavigate(6)}
-              className={`px-3 py-1.5 rounded-full transition-all ${
-                currentStep === 6 && !isHomeView ? 'bg-white text-primary shadow-soft' : 'text-ink-muted hover:text-ink'
-              }`}
-            >
               Roadmap
             </button>
           </nav>
         </div>
 
-        {/* User profile & controls */}
+        {/* Header only renders when the user is authenticated (see
+            OnboardingWizard's auth gate), so this is always the
+            logged-in view — no "Войти" fallback needed here anymore. */}
         <div className="flex items-center gap-3">
-          {userEmail ? (
-            <div className="flex items-center gap-2">
-              <div className="hidden sm:flex flex-col text-right">
-                <span className="text-xs font-semibold text-ink truncate max-w-[180px]">
-                  {userEmail}
-                </span>
-                <span className="text-[11px] text-success font-medium">Аккаунт подключен</span>
-              </div>
-              <button
-                type="button"
-                onClick={onLogout}
-                className="text-xs font-semibold px-3 py-1.5 rounded-button text-danger hover:bg-danger-muted border border-transparent hover:border-danger/20 transition-all"
-              >
-                Выйти ↗
-              </button>
-            </div>
-          ) : onOpenAuthModal ? (
-            <button
-              type="button"
-              onClick={onOpenAuthModal}
-              className="btn-primary text-xs py-2 px-4 shadow-purple"
-            >
-              Войти в аккаунт
-            </button>
-          ) : null}
+          <div className="hidden sm:flex flex-col text-right">
+            <span className="text-xs font-semibold text-ink truncate max-w-[180px]">
+              {userEmail}
+            </span>
+            <span className="text-[11px] text-success font-medium">Аккаунт подключен</span>
+          </div>
+          <button
+            type="button"
+            onClick={onLogout}
+            className="text-xs font-semibold px-3 py-1.5 rounded-button text-danger hover:bg-danger-muted border border-transparent hover:border-danger/20 transition-all"
+          >
+            Выйти ↗
+          </button>
         </div>
       </div>
     </header>
